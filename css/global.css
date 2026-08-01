@@ -5,11 +5,11 @@
     --primary-hover: #D6A94A;
     --primary-light: #E5C06B;
     --primary-dark: #9A722B;
-    --glass:rgba(255,255,255,0.3);
+    --glass: rgba(255, 255, 255, 0.3);
 
     /* ===== Backgrounds ===== */
 
-    --bg-primary: #0F0F10;
+    --bg-primary: #131315;
     --bg-secondary: #18181A;
     --bg-tertiary: #242426;
     --bg-light: #F6F2EB;
@@ -18,25 +18,27 @@
 
     --border-color: rgba(255, 255, 255, .08);
     --gold-border: rgba(200, 155, 60, .35);
-    
+
     --gold-shadow:
         0 0 30px rgba(200, 155, 60, .20);
 
     --glass-shadow:
         0 8px 32px rgba(0, 0, 0, .35);
 
-    --letter-s : 2px;
+    --letter-s: 2px;
 
 }
 
 body {
     font-family: "Poppins", sans-serif;
+    scroll-margin: 64px;
     height: 5000px;
 }
 
 html {
     scroll-behavior: smooth;
     scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--bg-primary);
 }
 
 h1,
@@ -57,4 +59,8 @@ li {
     list-style: none;
 }
 
-section {}
+section {
+    padding: 50px 0;
+    background-color: var(--bg-primary);
+    color: var(--bg-light);
+}
