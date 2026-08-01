@@ -1,0 +1,11 @@
+@keyframes show {
+    from {
+        opacity: .5;
+        transform: translateY(10px);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

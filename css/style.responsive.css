@@ -1,0 +1,130 @@
+/* 350 */
+@media (max-width: 1300px) {
+
+    /*^ NavBar Section */
+    .brand-name {
+        position: initial;
+        top: 0%;
+        left: 0%;
+        transform: translate(0%, 0%);
+        justify-self: flex-start;
+        margin-right: auto !important;
+    }
+
+    .navbar .container-fluid {
+        justify-content: flex-end;
+    }
+
+    .navbar button {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        justify-self: flex-end;
+        align-items: center;
+        width: 35px;
+        height: 30px;
+        padding: 0 5px;
+        border: 1px solid var(--primary-color);
+        transition-duration: .5s;
+    }
+
+    .navbar button:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    .navbar .navbar-collapse.collapse.show+button span {
+        position: absolute;
+    }
+
+    .navbar .navbar-collapse.collapse.show+button span:nth-of-type(1) {
+        width: 70%;
+        transform: rotate(45deg);
+    }
+
+    .navbar .navbar-collapse.collapse.show+button span:nth-of-type(2) {
+        transform: scale(0);
+    }
+
+    .navbar .navbar-collapse.collapse.show+button span:nth-of-type(3) {
+        width: 70%;
+        transform: rotate(-45deg);
+    }
+
+    .navbar button span {
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        transition-duration: .5s;
+    }
+
+    .navbar button span:nth-of-type(1) {
+        width: 50%;
+        align-self: flex-start;
+    }
+
+    .navbar button span:nth-of-type(2) {
+        background-color: var(--primary-color);
+    }
+
+    .navbar button span:nth-of-type(3) {
+        width: 50%;
+        align-self: flex-end;
+    }
+
+    nav .navbar-collapse .icons {
+        margin-top: 10px;
+    }
+
+    /*^ Header Section */
+    header .hero .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .hero .buttons>a {
+        font-size: 12px;
+        padding: 5px 10px;
+        width: 55%;
+    }
+}
+
+/* 450 */
+@media (min-width: 371px) and (max-width: 1300px) {}
+
+/* 650 */
+@media (min-width: 577px) and (max-width: 1300px) {
+
+    /*^ Header Section */
+    header .hero .buttons {
+        flex-direction: row;
+    }
+}
+
+/* 850 */
+@media (min-width: 769px) and (max-width: 1300px) {}
+
+/* 1050 */
+@media (min-width: 992px) and (max-width: 1300px) {
+
+    /*^ NavBar Section */
+    h2.navbar-brand.display-6.px-3.m-0.text-light {
+        margin: auto !important;
+    }
+
+    .brand-name {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    nav .navbar-collapse .icons {
+        margin-top: 0px;
+    }
+
+}
+
+/* 1250 */
+@media (min-width: 1181px) and (max-width: 1300px) {}
