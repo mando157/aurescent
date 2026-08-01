@@ -66,6 +66,7 @@ nav .navbar-collapse .nav-item i:hover{
 
 /*^ Header Section */
 header {
+    height: 100dvh;
     position: relative;
     background-image: url("../images/hero.png");
     background-position: center;
