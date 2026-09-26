@@ -1,0 +1,100 @@
+@use "../abstracts/" as *;
+
+#tsparticles {
+    @include position(fixed);
+    inset: 0;
+    z-index: 0;
+}
+
+.brand-name {
+    color: $primary-color;
+}
+
+nav {
+    backdrop-filter: blur(10px);
+    z-index: 999;
+
+    .navbar-collapse {
+        flex-grow: 0;
+    }
+
+    .navbar-nav {
+        border-radius: $border-r;
+        padding-block: 2px;
+
+        @include flex(space-around, center, row);
+
+        min-width: 250px;
+
+        a {
+            transition-duration: 0.5s;
+            border-radius: $border-r;
+
+            &:hover {
+                background-color: $primary-light;
+            }
+
+            .content {
+                @include position(absolute, initial, initial, -35px, 50%);
+
+                transform: translateX(-50%) scale(0);
+                padding: 2px 5px;
+                background-color: $primary-light;
+                font-weight: 600;
+                letter-spacing: 1.2px;
+                border-radius: $border-r;
+                transition-duration: 0.5s;
+                font-size: 12px;
+            }
+
+            &:hover {
+                .content {
+                    transform: translateX(-50%) scale(1);
+                }
+
+                i {
+                    color: #000;
+                }
+            }
+
+            i {
+                color: $primary-light;
+                font-size: 20px;
+                transition-duration: 0.5s;
+            }
+        }
+    }
+}
+
+
+    @include responsive(350) {
+
+        .navbar {
+            .container-fluid {
+                flex-direction: column;
+
+                h2 {
+                    display: none;
+                }
+            }
+        }
+    }
+
+
+    @include responsive(450) {
+
+    }
+
+
+    @include responsive(650) {
+
+        .navbar {
+            .container-fluid {
+                flex-direction: row;
+
+                h2 {
+                    display: block;
+                }
+            }
+        }
+    }

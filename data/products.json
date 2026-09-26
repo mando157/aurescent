@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "AMBRE ÉLÉGANCE",
+        "image": "p1.png",
+        "price": 89,
+        "description": "A warm amber fragrance with refined floral notes, creating an elegant and unforgettable presence."
+    },
+    {
+        "id": 2,
+        "name": "VELVET PETALS",
+        "image": "p2.png",
+        "price": 79,
+        "description": "A soft floral blend wrapped in delicate sweetness, designed to leave a graceful and romantic impression."
+    },
+    {
+        "id": 3,
+        "name": "SOUS LE SOLEIL",
+        "image": "p3.png",
+        "price": 84,
+        "description": "A radiant fragrance inspired by golden sunlight, blending fresh citrus with warm and sensual notes."
+    },
+    {
+        "id": 4,
+        "name": "CHAMPAGNE RITUAL",
+        "image": "p4.png",
+        "price": 94,
+        "description": "A sparkling composition of bright fruity notes and subtle florals, crafted for moments of celebration."
+    },
+    {
+        "id": 5,
+        "name": "OBSIDIAN NIGHT",
+        "image": "p5.png",
+        "price": 99,
+        "description": "A deep and mysterious scent combining dark woods, warm spices, and sensual notes for the night."
+    },
+    {
+        "id": 6,
+        "name": "L'OR LUMIÈRE",
+        "image": "p6.png",
+        "price": 94,
+        "description": "A luminous golden fragrance where delicate florals meet warm amber notes in a sophisticated harmony."
+    },
+    {
+        "id": 7,
+        "name": "PURE IVOIRE",
+        "image": "p7.png",
+        "price": 74,
+        "description": "A clean and delicate composition of soft florals and creamy notes, expressing timeless simplicity."
+    },
+    {
+        "id": 8,
+        "name": "ÉCLIPSE NOIRE",
+        "image": "p8.png",
+        "price": 99,
+        "description": "An intense and captivating fragrance blending rich woods with warm oriental notes and a dark sensual finish."
+    }
+]

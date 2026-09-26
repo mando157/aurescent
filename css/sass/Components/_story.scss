@@ -1,0 +1,70 @@
+@use "../abstracts/" as *;
+
+#Story {
+
+    .part-1 {
+        span,
+        a {
+            color: $primary-color;
+            transition-duration: 0.5s;
+        }
+
+        a {
+            @include position(relative);
+
+            width: fit-content;
+            padding-inline: 0;
+
+            &:hover {
+                color: $primary-light;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+
+                @include position(absolute, initial, initial, initial, 0);
+
+                width: 0%;
+                height: 2px;
+                background-color: $primary-light;
+                transition-duration: 0.5s;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+        }
+    }
+
+    .part-2 {
+        img {
+            @include position(relative);
+
+            filter: grayscale(100%);
+            z-index: 2;
+            transition-duration: 1s;
+
+            &:hover {
+                filter: grayscale(0%) drop-shadow($gold-shadow);
+            }
+        }
+
+        &::after {
+            content: "";
+            display: block;
+
+            @include position(absolute, 0, initial, initial, 0);
+
+            width: 100%;
+            height: 100%;
+            border: 1px solid $gold-border;
+            transition-duration: 1s;
+        }
+
+        &:hover::after {
+            transform: scale(1.01);
+            border-color: $primary-hover;
+        }
+    }
+}
