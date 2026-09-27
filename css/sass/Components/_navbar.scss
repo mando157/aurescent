@@ -1,18 +1,18 @@
 @use "../abstracts/" as *;
 
-#tsparticles {
-    @include position(fixed);
-    inset: 0;
-    z-index: 0;
-}
-
 .brand-name {
     color: $primary-color;
 }
 
-nav {
+nav.navbar {
     backdrop-filter: blur(10px);
     z-index: 999;
+    padding: 20px 0px;
+    transition-duration: .5s;
+
+    &.scrolled{
+        transform: translateY(-100%);
+    }
 
     .navbar-collapse {
         flex-grow: 0;
@@ -30,6 +30,7 @@ nav {
             transition-duration: 0.5s;
             border-radius: $border-r;
 
+            &.active,
             &:hover {
                 background-color: $primary-light;
             }
@@ -45,6 +46,13 @@ nav {
                 border-radius: $border-r;
                 transition-duration: 0.5s;
                 font-size: 12px;
+            }
+
+
+            &.active {
+                i {
+                    color: #000;
+                }
             }
 
             &:hover {
@@ -67,34 +75,28 @@ nav {
 }
 
 
-    @include responsive(350) {
+@include responsive(350) {
 
-        .navbar {
-            .container-fluid {
-                flex-direction: column;
+    .navbar {
+        .container {
+            flex-direction: column;
 
-                h2 {
-                    display: none;
-                }
+            h2 {
+                display: none;
             }
         }
     }
+}
 
+@include responsive(650) {
 
-    @include responsive(450) {
+    .navbar {
+        .container {
+            flex-direction: row;
 
-    }
-
-
-    @include responsive(650) {
-
-        .navbar {
-            .container-fluid {
-                flex-direction: row;
-
-                h2 {
-                    display: block;
-                }
+            h2 {
+                display: block;
             }
         }
     }
+}

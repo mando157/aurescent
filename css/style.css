@@ -37,29 +37,23 @@ section {
   z-index: 3;
 }
 
-#tsparticles {
-  position: fixed;
-  top: initial;
-  right: initial;
-  bottom: initial;
-  left: initial;
-  z-index: initial;
-  inset: 0;
-  z-index: 0;
-}
-
 .brand-name {
   color: #C89B3C;
 }
 
-nav {
+nav.navbar {
   backdrop-filter: blur(10px);
   z-index: 999;
+  padding: 20px 0px;
+  transition-duration: 0.5s;
 }
-nav .navbar-collapse {
+nav.navbar.scrolled {
+  transform: translateY(-100%);
+}
+nav.navbar .navbar-collapse {
   flex-grow: 0;
 }
-nav .navbar-nav {
+nav.navbar .navbar-nav {
   border-radius: 5px;
   padding-block: 2px;
   display: flex;
@@ -68,14 +62,14 @@ nav .navbar-nav {
   flex-direction: row;
   min-width: 250px;
 }
-nav .navbar-nav a {
+nav.navbar .navbar-nav a {
   transition-duration: 0.5s;
   border-radius: 5px;
 }
-nav .navbar-nav a:hover {
+nav.navbar .navbar-nav a.active, nav.navbar .navbar-nav a:hover {
   background-color: #E5C06B;
 }
-nav .navbar-nav a .content {
+nav.navbar .navbar-nav a .content {
   position: absolute;
   top: initial;
   right: initial;
@@ -91,13 +85,16 @@ nav .navbar-nav a .content {
   transition-duration: 0.5s;
   font-size: 12px;
 }
-nav .navbar-nav a:hover .content {
-  transform: translateX(-50%) scale(1);
-}
-nav .navbar-nav a:hover i {
+nav.navbar .navbar-nav a.active i {
   color: #000;
 }
-nav .navbar-nav a i {
+nav.navbar .navbar-nav a:hover .content {
+  transform: translateX(-50%) scale(1);
+}
+nav.navbar .navbar-nav a:hover i {
+  color: #000;
+}
+nav.navbar .navbar-nav a i {
   color: #E5C06B;
   font-size: 20px;
   transition-duration: 0.5s;
@@ -105,25 +102,24 @@ nav .navbar-nav a i {
 
 /* 350 */
 @media (max-width: 1300px) {
-  .navbar .container-fluid {
+  .navbar .container {
     flex-direction: column;
   }
-  .navbar .container-fluid h2 {
+  .navbar .container h2 {
     display: none;
   }
 }
-/* 450 */
 /* 650 */
 @media (min-width: 577px) and (max-width: 1300px) {
-  .navbar .container-fluid {
+  .navbar .container {
     flex-direction: row;
   }
-  .navbar .container-fluid h2 {
+  .navbar .container h2 {
     display: block;
   }
 }
 header {
-  min-height: 100vh;
+  min-height: 100svh;
   position: relative;
   top: initial;
   right: initial;
@@ -136,84 +132,97 @@ header {
   flex-direction: row;
   overflow: hidden;
 }
-header .main-container {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: row;
-}
-header .main-container .content .buttons {
-  justify-content: start;
-  /* 350 */
-}
-@media (max-width: 1300px) {
-  header .main-container .content .buttons {
-    justify-content: center;
-  }
-}
-header .main-container .content .buttons {
-  /* 850 */
-}
-@media (min-width: 769px) and (max-width: 1300px) {
-  header .main-container .content .buttons {
-    justify-content: start;
-  }
-}
-header .main-container .content {
-  /* 350 */
-}
-@media (max-width: 1300px) {
-  header .main-container .content {
-    text-align: center;
-  }
-}
-header .main-container .content {
-  /* 850 */
-}
-@media (min-width: 769px) and (max-width: 1300px) {
-  header .main-container .content {
-    text-align: start;
-  }
-}
-header .main-container .image {
+header > button {
+  position: absolute;
+  background-color: transparent;
+  overflow: hidden;
+  border: 1px solid #E5C06B;
+  border-radius: 5px;
+  width: 35px;
+  height: 35px;
+  bottom: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  z-index: 1000;
 }
-header .main-container .image img {
-  margin: 40px 0px 0px 0px;
+header > button i {
   position: relative;
   top: initial;
-  right: -50px;
+  right: initial;
+  bottom: initial;
+  left: initial;
+  z-index: initial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 14px;
+  color: #E5C06B;
+  border-radius: 5px;
+  letter-spacing: 1.5px;
+  overflow: hidden;
+  transition-duration: 0.5s;
+  z-index: 3;
+}
+header > button::after, header > button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: initial;
   bottom: initial;
   left: initial;
   z-index: initial;
   width: 100%;
-  border-radius: 20px 0 0 20px;
-  box-shadow: 0 0 50px 10px rgba(255, 215, 121, 0.5);
+  height: 100%;
+  transition-duration: 0.5s;
 }
-header .main-container .image {
-  /* 350 */
+header > button::after, header > button::before {
+  background-color: #E5C06B;
 }
-@media (max-width: 1300px) {
-  header .main-container .image {
-    display: none;
-  }
+header > button::after {
+  left: 100%;
 }
-header .main-container .image {
-  /* 850 */
+header > button:hover::after {
+  left: 0;
 }
-@media (min-width: 769px) and (max-width: 1300px) {
-  header .main-container .image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-  }
+header > button::before {
+  right: 100%;
 }
-header .content {
+header > button:hover::before {
+  right: 0;
+}
+header > button:hover i {
+  color: black;
+}
+header > button.next {
+  right: 50px;
+}
+header > button.prev {
+  right: 100px;
+}
+header .container .row {
+  opacity: 0;
+  display: none;
+  transition-duration: 0.5s;
+}
+header .container .row.show {
+  opacity: 1;
+}
+header .container .row.show .content {
+  transform: translateX(0%);
+}
+header .container .row.show .image {
+  transform: scale(1);
+}
+header .container .row.active {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+header .container .row .content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -224,9 +233,11 @@ header .content {
   bottom: initial;
   left: initial;
   z-index: initial;
+  transform: translateX(-100%);
+  transition-duration: 1s;
   overflow: hidden;
 }
-header .content .hero {
+header .container .row .content .hero {
   position: relative;
   top: initial;
   right: initial;
@@ -234,16 +245,47 @@ header .content .hero {
   left: initial;
   z-index: initial;
   z-index: 2;
+  /* 350 */
 }
-header .content .hero p {
+@media (max-width: 1300px) {
+  header .container .row .content .hero {
+    text-align: center;
+  }
+}
+header .container .row .content .hero {
+  /* 850 */
+}
+@media (min-width: 769px) and (max-width: 1300px) {
+  header .container .row .content .hero {
+    text-align: start;
+  }
+}
+header .container .row .content .hero p {
   color: #9A722B;
 }
-header .content .hero h1,
-header .content .hero h3 {
+header .container .row .content .hero h1,
+header .container .row .content .hero h3 {
   color: white;
   letter-spacing: 2px;
 }
-header .content .hero .buttons > a {
+header .container .row .content .hero .buttons {
+  justify-content: start;
+  /* 350 */
+}
+@media (max-width: 1300px) {
+  header .container .row .content .hero .buttons {
+    justify-content: center;
+  }
+}
+header .container .row .content .hero .buttons {
+  /* 850 */
+}
+@media (min-width: 769px) and (max-width: 1300px) {
+  header .container .row .content .hero .buttons {
+    justify-content: start;
+  }
+}
+header .container .row .content .hero .buttons > a {
   position: relative;
   top: initial;
   right: initial;
@@ -256,7 +298,7 @@ header .content .hero .buttons > a {
   letter-spacing: 1.5px;
   overflow: hidden;
 }
-header .content .hero .buttons > a::after, header .content .hero .buttons > a::before {
+header .container .row .content .hero .buttons > a::after, header .container .row .content .hero .buttons > a::before {
   content: "";
   position: absolute;
   top: 0;
@@ -268,7 +310,7 @@ header .content .hero .buttons > a::after, header .content .hero .buttons > a::b
   height: 100%;
   transition-duration: 0.5s;
 }
-header .content .hero .buttons > a span {
+header .container .row .content .hero .buttons > a span {
   position: relative;
   top: initial;
   right: initial;
@@ -277,52 +319,91 @@ header .content .hero .buttons > a span {
   z-index: initial;
   z-index: 2;
 }
-header .content .hero .buttons > a {
+header .container .row .content .hero .buttons > a {
   /* First Button */
 }
-header .content .hero .buttons > a:first-child {
+header .container .row .content .hero .buttons > a:first-child {
   color: black;
   border: 1px solid #C89B3C;
   background-color: #C89B3C;
 }
-header .content .hero .buttons > a:first-child::after, header .content .hero .buttons > a:first-child::before {
+header .container .row .content .hero .buttons > a:first-child::after, header .container .row .content .hero .buttons > a:first-child::before {
   background-color: #E5C06B;
 }
-header .content .hero .buttons > a:first-child::after {
+header .container .row .content .hero .buttons > a:first-child::after {
   left: 100%;
 }
-header .content .hero .buttons > a:first-child:hover::after {
+header .container .row .content .hero .buttons > a:first-child:hover::after {
   left: 0;
 }
-header .content .hero .buttons > a:first-child::before {
+header .container .row .content .hero .buttons > a:first-child::before {
   right: 100%;
 }
-header .content .hero .buttons > a:first-child:hover::before {
+header .container .row .content .hero .buttons > a:first-child:hover::before {
   right: 0;
 }
-header .content .hero .buttons > a {
+header .container .row .content .hero .buttons > a {
   /* Last Button */
 }
-header .content .hero .buttons > a:last-child {
+header .container .row .content .hero .buttons > a:last-child {
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
-header .content .hero .buttons > a:last-child::after, header .content .hero .buttons > a:last-child::before {
+header .container .row .content .hero .buttons > a:last-child::after, header .container .row .content .hero .buttons > a:last-child::before {
   background-color: rgba(255, 255, 255, 0.3);
 }
-header .content .hero .buttons > a:last-child::after {
+header .container .row .content .hero .buttons > a:last-child::after {
   left: 100%;
 }
-header .content .hero .buttons > a:last-child:hover::after {
+header .container .row .content .hero .buttons > a:last-child:hover::after {
   left: 0;
 }
-header .content .hero .buttons > a:last-child::before {
+header .container .row .content .hero .buttons > a:last-child::before {
   right: 100%;
 }
-header .content .hero .buttons > a:last-child:hover::before {
+header .container .row .content .hero .buttons > a:last-child:hover::before {
   right: 0;
 }
-header .content {
+header .container .row .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  transform: scale(0);
+  transition-duration: 1s;
+}
+header .container .row .image img {
+  margin: 40px 0px 0px 0px;
+  position: relative;
+  top: initial;
+  right: initial;
+  bottom: initial;
+  left: initial;
+  z-index: initial;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 50px 10px rgba(255, 215, 121, 0.3);
+}
+header .container .row .image {
+  /* 350 */
+}
+@media (max-width: 1300px) {
+  header .container .row .image {
+    display: none;
+  }
+}
+header .container .row .image {
+  /* 850 */
+}
+@media (min-width: 769px) and (max-width: 1300px) {
+  header .container .row .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+header {
   /* Down Arrow */
 }
 header > .icon {

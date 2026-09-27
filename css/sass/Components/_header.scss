@@ -1,168 +1,254 @@
 @use "../abstracts/" as *;
 
 header {
-    min-height: 100vh;
+    min-height: 100svh;
     @include position(relative);
     @include flex();
     overflow: hidden;
 
-    .main-container {
-        width: 100%;
-        @include flex($js : space-evenly);
+    >button {
+        position: absolute;
+        background-color: transparent;
+        overflow: hidden;
+        border: 1px solid $primary-light;
+        border-radius: 5px;
+        width: 35px;
+        height: 35px;
+        bottom: 35px;
+        @include flex();
+        z-index: 1000;
 
-        .content {
-            .buttons {
-                justify-content: start;
+        i {
+            @include position(relative);
+            @include flex();
+            font-size: 14px;
+            color: $primary-light;
+            border-radius: $border-r;
+            letter-spacing: 1.5px;
+            overflow: hidden;
+            transition-duration: 0.5s;
+            z-index: 3;
+        }
+
+        &::after,
+        &::before {
+            content: "";
+            @include position(absolute, 0);
+            width: 100%;
+            height: 100%;
+            transition-duration: 0.5s;
+        }
+
+        &::after,
+        &::before {
+            background-color: $primary-light;
+        }
+
+        &::after {
+            left: 100%;
+        }
+
+        &:hover::after {
+            left: 0;
+        }
+
+        &::before {
+            right: 100%;
+        }
+
+        &:hover::before {
+            right: 0;
+        }
+
+        &:hover i {
+            color: black;
+        }
+    }
+
+    >button.next {
+        right: 50px;
+    }
+
+    >button.prev {
+        right: 100px;
+    }
+
+    .container {
+
+        .row {
+            opacity: 0;
+            display: none;
+            transition-duration: .5s;
+
+            &.show {
+                opacity: 1;
+
+                .content {
+                    transform: translateX(0%);
+                }
+                .image{
+                    transform: scale(1);
+                }
+            }
+
+            &.active {
+                @include flex($js : space-between);
+
+            }
+
+            .content {
+                @include flex();
+                @include position(relative);
+                transform: translateX(-100%);
+                transition-duration: 1s;
+                overflow: hidden;
+
+                .hero {
+                    @include position(relative);
+                    z-index: 2;
+
+                    @include responsive(350) {
+                        text-align: center;
+                    }
+
+                    @include responsive(850) {
+                        text-align: start;
+                    }
+
+                    p {
+                        color: $primary-dark;
+                    }
+
+                    h1,
+                    h3 {
+                        color: white;
+                        letter-spacing: $letter-s;
+                    }
+
+
+                    .buttons {
+                        justify-content: start;
+
+                        @include responsive(350) {
+                            justify-content: center;
+                        }
+
+                        @include responsive(850) {
+                            justify-content: start;
+                        }
+
+                        >a {
+                            @include position(relative);
+
+                            font-size: 14px;
+                            padding: 5px 25px;
+                            border-radius: $border-r;
+                            letter-spacing: 1.5px;
+                            overflow: hidden;
+
+                            &::after,
+                            &::before {
+                                content: "";
+                                @include position(absolute, 0);
+                                width: 100%;
+                                height: 100%;
+                                transition-duration: 0.5s;
+                            }
+
+                            span {
+                                @include position(relative);
+                                z-index: 2;
+                            }
+
+                            /* First Button */
+
+                            &:first-child {
+                                color: black;
+                                border: 1px solid $primary-color;
+                                background-color: $primary-color;
+
+                                &::after,
+                                &::before {
+                                    background-color: $primary-light;
+                                }
+
+                                &::after {
+                                    left: 100%;
+                                }
+
+                                &:hover::after {
+                                    left: 0;
+                                }
+
+                                &::before {
+                                    right: 100%;
+                                }
+
+                                &:hover::before {
+                                    right: 0;
+                                }
+                            }
+
+                            /* Last Button */
+
+                            &:last-child {
+                                color: white;
+                                border: 1px solid $glass;
+
+                                &::after,
+                                &::before {
+                                    background-color: $glass;
+                                }
+
+                                &::after {
+                                    left: 100%;
+                                }
+
+                                &:hover::after {
+                                    left: 0;
+                                }
+
+                                &::before {
+                                    right: 100%;
+                                }
+
+                                &:hover::before {
+                                    right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            .image {
+                @include flex();
+                transform: scale(0);
+                transition-duration: 1s;
+
+                img {
+                    margin: 40px 0px 0px 0px;
+                    @include position(relative);
+
+                    width: 100%;
+
+                    border-radius: 10px;
+                    box-shadow: 0 0 50px 10px rgba(255, 215, 121, 0.3);
+                }
 
                 @include responsive(350) {
-                    justify-content: center;
+                    display: none;
                 }
 
                 @include responsive(850) {
-                    justify-content: start;
+                    @include flex();
                 }
-            }
-
-            @include responsive(350) {
-                text-align: center;
-            }
-
-            @include responsive(850) {
-                text-align: start;
-            }
-        }
-
-        .image {
-            @include flex();
-
-            img {
-                margin: 40px 0px 0px 0px;
-                @include position(relative, $r : -50px);
-
-                width: 100%;
-
-                border-radius: 20px 0 0 20px;
-                box-shadow: 0 0 50px 10px rgba(255, 215, 121, 0.5);
-            }
-
-            @include responsive(350) {
-                display: none;
-            }
-
-            @include responsive(850) {
-                @include flex();
             }
         }
     }
 
-    .content {
-        @include flex();
-        @include position(relative);
-
-        overflow: hidden;
-
-        .hero {
-            @include position(relative);
-            z-index: 2;
-
-            p {
-                color: $primary-dark;
-            }
-
-            h1,
-            h3 {
-                color: white;
-                letter-spacing: $letter-s;
-            }
-
-            .buttons {
-                >a {
-                    @include position(relative);
-
-                    font-size: 14px;
-                    padding: 5px 25px;
-                    border-radius: $border-r;
-                    letter-spacing: 1.5px;
-                    overflow: hidden;
-
-                    &::after,
-                    &::before {
-                        content: "";
-                        @include position(absolute, 0);
-                        width: 100%;
-                        height: 100%;
-                        transition-duration: 0.5s;
-                    }
-
-                    span {
-                        @include position(relative);
-                        z-index: 2;
-                    }
-
-                    /* First Button */
-
-                    &:first-child {
-                        color: black;
-                        border: 1px solid $primary-color;
-                        background-color: $primary-color;
-
-                        &::after,
-                        &::before {
-                            background-color: $primary-light;
-                        }
-
-                        &::after {
-                            left: 100%;
-                        }
-
-                        &:hover::after {
-                            left: 0;
-                        }
-
-                        &::before {
-                            right: 100%;
-                        }
-
-                        &:hover::before {
-                            right: 0;
-                        }
-                    }
-
-                    /* Last Button */
-
-                    &:last-child {
-                        color: white;
-                        border: 1px solid $glass;
-
-                        &::after,
-                        &::before {
-                            background-color: $glass;
-                        }
-
-                        &::after {
-                            left: 100%;
-                        }
-
-                        &:hover::after {
-                            left: 0;
-                        }
-
-                        &::before {
-                            right: 100%;
-                        }
-
-                        &:hover::before {
-                            right: 0;
-                        }
-                    }
-                }
-            }
-        }
-
-        /* Down Arrow */
-
-    }
-
+    /* Down Arrow */
     >.icon {
         @include position(absolute, initial, initial, 30px, 50%);
 
