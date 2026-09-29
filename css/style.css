@@ -488,4 +488,183 @@ header > .icon {
   border-color: #D6A94A;
 }
 
+#Products::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: initial;
+  bottom: initial;
+  left: 0;
+  z-index: initial;
+  background-image: url("../images/bg.png");
+  background-color: #131315;
+}
+#Products .container {
+  position: relative;
+}
+#Products .container .title .btn-view {
+  font-size: 17px;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #E5C06B;
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.5s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+#Products .container .title .btn-view span {
+  position: relative;
+  z-index: 3;
+}
+#Products .container .title .btn-view::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #E5C06B;
+  transition: 0.5s ease;
+}
+#Products .container .title .btn-view:hover {
+  color: #1e1e2b;
+  transition-delay: 0.5s;
+}
+#Products .container .title .btn-view:hover::before {
+  width: 100%;
+}
+#Products .container .title .btn-view::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #E5C06B;
+  transition: 0.4s ease;
+  z-index: 1;
+}
+#Products .container .title .btn-view:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
+}
+#Products .container .swiper {
+  width: 100%;
+  padding: 40px 25px 50px;
+  /* 350 */
+}
+@media (max-width: 1300px) {
+  #Products .container .swiper {
+    max-width: 280px;
+  }
+}
+#Products .container .swiper {
+  /* 650 */
+}
+@media (min-width: 577px) and (max-width: 1300px) {
+  #Products .container .swiper {
+    max-width: 380px;
+  }
+}
+#Products .container .swiper {
+  /* 850 */
+}
+@media (min-width: 769px) and (max-width: 1300px) {
+  #Products .container .swiper {
+    max-width: initial;
+  }
+}
+#Products .container .swiper .swiper-slide {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: blur(3px);
+  opacity: 0.3;
+  transform: scale(0.9);
+  transition: all 0.4s ease-in-out;
+  filter: drop-shadow(0 10px 18px rgba(155, 126, 63, 0.35));
+  /* 350 */
+}
+@media (max-width: 1300px) {
+  #Products .container .swiper .swiper-slide {
+    max-width: 280px;
+  }
+}
+#Products .container .swiper .swiper-slide {
+  /* 650 */
+}
+@media (min-width: 577px) and (max-width: 1300px) {
+  #Products .container .swiper .swiper-slide {
+    max-width: initial;
+  }
+}
+#Products .container .swiper .swiper-slide .image {
+  position: relative;
+  width: 100%;
+  max-height: 550px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+#Products .container .swiper .swiper-slide .image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#Products .container .swiper .swiper-slide-next {
+  filter: blur(0);
+  opacity: 1;
+  transform: scale(1);
+  filter: drop-shadow(0 10px 18px rgba(200, 155, 60, 0.5));
+}
+#Products .container .swiper {
+  /* 350 */
+}
+@media (max-width: 1300px) {
+  #Products .container .swiper .swiper-slide-active {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1);
+    filter: drop-shadow(0 10px 18px rgba(200, 155, 60, 0.5));
+  }
+  #Products .container .swiper .swiper-slide-next {
+    filter: blur(3px);
+    opacity: 0.3;
+    transform: scale(0.9);
+    transition: all 0.4s ease-in-out;
+    filter: drop-shadow(0 10px 18px rgba(155, 126, 63, 0.35));
+  }
+}
+#Products .container .swiper {
+  /* 850 */
+}
+@media (min-width: 769px) and (max-width: 1300px) {
+  #Products .container .swiper .swiper-slide-active {
+    filter: blur(3px);
+    opacity: 0.3;
+    transform: scale(0.9);
+    transition: all 0.4s ease-in-out;
+    filter: drop-shadow(0 10px 18px rgba(155, 126, 63, 0.35));
+  }
+  #Products .container .swiper .swiper-slide-next {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1);
+    filter: drop-shadow(0 10px 18px rgba(200, 155, 60, 0.5));
+  }
+}
+#Products .container .swiper .swiper-pagination .swiper-pagination-bullet {
+  background-color: #C89B3C;
+}
+#Products .container .swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 20px));
+  border-radius: 5px;
+}
+
 /*# sourceMappingURL=style.css.map */
