@@ -1,58 +1,1417 @@
-[
-    {
-        "id": 1,
-        "name": "AMBRE ÉLÉGANCE",
-        "image": "p1.png",
-        "price": 89,
-        "description": "A warm amber fragrance with refined floral notes, creating an elegant and unforgettable presence."
-    },
-    {
-        "id": 2,
-        "name": "VELVET PETALS",
-        "image": "p2.png",
-        "price": 79,
-        "description": "A soft floral blend wrapped in delicate sweetness, designed to leave a graceful and romantic impression."
-    },
-    {
-        "id": 3,
-        "name": "SOUS LE SOLEIL",
-        "image": "p3.png",
-        "price": 84,
-        "description": "A radiant fragrance inspired by golden sunlight, blending fresh citrus with warm and sensual notes."
-    },
-    {
-        "id": 4,
-        "name": "CHAMPAGNE RITUAL",
-        "image": "p4.png",
-        "price": 94,
-        "description": "A sparkling composition of bright fruity notes and subtle florals, crafted for moments of celebration."
-    },
-    {
-        "id": 5,
-        "name": "OBSIDIAN NIGHT",
-        "image": "p5.png",
-        "price": 99,
-        "description": "A deep and mysterious scent combining dark woods, warm spices, and sensual notes for the night."
-    },
-    {
-        "id": 6,
-        "name": "L'OR LUMIÈRE",
-        "image": "p6.png",
-        "price": 94,
-        "description": "A luminous golden fragrance where delicate florals meet warm amber notes in a sophisticated harmony."
-    },
-    {
-        "id": 7,
-        "name": "PURE IVOIRE",
-        "image": "p7.png",
-        "price": 74,
-        "description": "A clean and delicate composition of soft florals and creamy notes, expressing timeless simplicity."
-    },
-    {
-        "id": 8,
-        "name": "ÉCLIPSE NOIRE",
-        "image": "p8.png",
-        "price": 99,
-        "description": "An intense and captivating fragrance blending rich woods with warm oriental notes and a dark sensual finish."
-    }
-]
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "Calvin Klein CK One",
+            "description": "CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It's a versatile fragrance suitable for everyday wear.",
+            "category": "fragrances",
+            "price": 49.99,
+            "discountPercentage": 18.14,
+            "rating": 4.7,
+            "stock": 73,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "unisex"
+            ],
+            "brand": "Calvin Klein",
+            "weight": 2,
+            "dimensions": {
+                "width": 29.24,
+                "height": 27.34,
+                "depth": 9
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 5,
+                    "comment": "Not what I expected, but it is growing on me.",
+                    "date": "2026-08-10T08:25:56.559Z",
+                    "reviewerName": "Hana Tarek",
+                    "reviewerEmail": "hana.tarek@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Nice scent, but the bottle arrived slightly scratched.",
+                    "date": "2026-06-17T08:25:56.560Z",
+                    "reviewerName": "Sara Mostafa",
+                    "reviewerEmail": "sara.mostafa@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Nice scent, but the bottle arrived slightly scratched.",
+                    "date": "2026-04-06T08:25:56.560Z",
+                    "reviewerName": "Omar Khaled",
+                    "reviewerEmail": "omar.khaled@x.dummyjson.com"
+                }
+            ],
+            "image": "p1.png"
+        },
+        {
+            "id": 2,
+            "title": "Chanel Coco Noir Eau De",
+            "description": "Coco Noir by Chanel is an elegant and mysterious fragrance, featuring notes of grapefruit, rose, and sandalwood. Perfect for evening occasions.",
+            "category": "fragrances",
+            "price": 129.99,
+            "discountPercentage": 9.24,
+            "rating": 3.94,
+            "stock": 66,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "women"
+            ],
+            "brand": "Chanel",
+            "weight": 4,
+            "dimensions": {
+                "width": 14.81,
+                "height": 26.67,
+                "depth": 13.9
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 4,
+                    "comment": "Not what I expected, but it is growing on me.",
+                    "date": "2026-06-11T08:25:56.560Z",
+                    "reviewerName": "Hana Tarek",
+                    "reviewerEmail": "hana.tarek@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "comment": "A bit strong at first, then it settles beautifully.",
+                    "date": "2026-08-17T08:25:56.560Z",
+                    "reviewerName": "Mariam Samir",
+                    "reviewerEmail": "mariam.samir@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "comment": "Not what I expected, but it is growing on me.",
+                    "date": "2026-09-04T08:25:56.560Z",
+                    "reviewerName": "Hana Tarek",
+                    "reviewerEmail": "hana.tarek@x.dummyjson.com"
+                }
+            ],
+            "image": "p2.png"
+        },
+        {
+            "id": 3,
+            "title": "Dior J'adore",
+            "description": "J'adore by Dior is a luxurious and floral fragrance, known for its blend of ylang-ylang, rose, and jasmine. It embodies femininity and sophistication.",
+            "category": "fragrances",
+            "price": 89.99,
+            "discountPercentage": 18.1,
+            "rating": 4.67,
+            "stock": 34,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "women"
+            ],
+            "brand": "Dior",
+            "weight": 2,
+            "dimensions": {
+                "width": 12.67,
+                "height": 16.53,
+                "depth": 28.66
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 3,
+                    "comment": "A bit strong at first, then it settles beautifully.",
+                    "date": "2026-05-07T08:25:56.560Z",
+                    "reviewerName": "Nour Ali",
+                    "reviewerEmail": "nour.ali@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Lasts all day and I get compliments everywhere.",
+                    "date": "2026-09-19T08:25:56.560Z",
+                    "reviewerName": "Nour Ali",
+                    "reviewerEmail": "nour.ali@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Excellent longevity and sillage.",
+                    "date": "2026-06-24T08:25:56.560Z",
+                    "reviewerName": "Laila Nabil",
+                    "reviewerEmail": "laila.nabil@x.dummyjson.com"
+                }
+            ],
+            "image": "p3.png"
+        },
+        {
+            "id": 4,
+            "title": "Dolce Shine Eau de",
+            "description": "Dolce Shine by Dolce & Gabbana is a vibrant and fruity fragrance, featuring notes of mango, jasmine, and blonde woods. It's a joyful and youthful scent.",
+            "category": "fragrances",
+            "price": 69.99,
+            "discountPercentage": 11.08,
+            "rating": 4.44,
+            "stock": 73,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "women"
+            ],
+            "brand": "Dolce & Gabbana",
+            "weight": 1,
+            "dimensions": {
+                "width": 27.83,
+                "height": 14.66,
+                "depth": 16.83
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 4,
+                    "comment": "Smells amazing, exactly as described.",
+                    "date": "2026-05-17T08:25:56.560Z",
+                    "reviewerName": "Ahmed Hassan",
+                    "reviewerEmail": "ahmed.hassan@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "comment": "Great value for money!",
+                    "date": "2026-05-25T08:25:56.560Z",
+                    "reviewerName": "Omar Khaled",
+                    "reviewerEmail": "omar.khaled@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Perfect gift, my family loved it.",
+                    "date": "2026-08-20T08:25:56.560Z",
+                    "reviewerName": "Mariam Samir",
+                    "reviewerEmail": "mariam.samir@x.dummyjson.com"
+                }
+            ],
+            "image": "p4.png"
+        },
+        {
+            "id": 5,
+            "title": "Gucci Bloom Eau de",
+            "description": "Gucci Bloom by Gucci is a floral and captivating fragrance, with notes of tuberose, jasmine, and Rangoon creeper. It's a modern and romantic scent.",
+            "category": "fragrances",
+            "price": 79.99,
+            "discountPercentage": 9.79,
+            "rating": 3.83,
+            "stock": 77,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "women"
+            ],
+            "brand": "Gucci",
+            "weight": 4,
+            "dimensions": {
+                "width": 14.09,
+                "height": 10.41,
+                "depth": 19.19
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 3,
+                    "comment": "Not what I expected, but it is growing on me.",
+                    "date": "2026-08-23T08:25:56.560Z",
+                    "reviewerName": "Mahmoud Ibrahim",
+                    "reviewerEmail": "mahmoud.ibrahim@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Excellent longevity and sillage.",
+                    "date": "2026-08-24T08:25:56.560Z",
+                    "reviewerName": "Karim Fathy",
+                    "reviewerEmail": "karim.fathy@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "comment": "Lasts all day and I get compliments everywhere.",
+                    "date": "2026-08-06T08:25:56.560Z",
+                    "reviewerName": "Mahmoud Ibrahim",
+                    "reviewerEmail": "mahmoud.ibrahim@x.dummyjson.com"
+                }
+            ],
+            "image": "p5.png"
+        },
+        {
+            "id": 6,
+            "title": "Dior Sauvage Eau de Toilette",
+            "description": "Sauvage by Dior is a fresh and spicy fragrance with bergamot, pepper, and ambroxan. Bold, magnetic, and made for confident everyday wear.",
+            "category": "fragrances",
+            "price": 94.99,
+            "discountPercentage": 13.07,
+            "rating": 4.79,
+            "stock": 35,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "men"
+            ],
+            "brand": "Dior",
+            "weight": 5,
+            "dimensions": {
+                "width": 20.91,
+                "height": 9.08,
+                "depth": 14.35
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 5,
+                    "comment": "Nice scent, but the bottle arrived slightly scratched.",
+                    "date": "2026-04-23T08:25:56.560Z",
+                    "reviewerName": "Mahmoud Ibrahim",
+                    "reviewerEmail": "mahmoud.ibrahim@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "comment": "A bit strong at first, then it settles beautifully.",
+                    "date": "2026-08-10T08:25:56.560Z",
+                    "reviewerName": "Laila Nabil",
+                    "reviewerEmail": "laila.nabil@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "comment": "Perfect gift, my family loved it.",
+                    "date": "2026-07-10T08:25:56.560Z",
+                    "reviewerName": "Mahmoud Ibrahim",
+                    "reviewerEmail": "mahmoud.ibrahim@x.dummyjson.com"
+                }
+            ],
+            "image": "p6.png"
+        },
+        {
+            "id": 7,
+            "title": "Bleu de Chanel Eau de Parfum",
+            "description": "Bleu de Chanel is a woody aromatic fragrance built on citrus, incense, and cedar. A refined choice for both office and evening.",
+            "category": "fragrances",
+            "price": 139.99,
+            "discountPercentage": 15.14,
+            "rating": 4.01,
+            "stock": 41,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "men"
+            ],
+            "brand": "Chanel",
+            "weight": 3,
+            "dimensions": {
+                "width": 20.66,
+                "height": 24.46,
+                "depth": 13.06
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 3,
+                    "comment": "Not what I expected, but it is growing on me.",
+                    "date": "2026-05-06T08:25:56.560Z",
+                    "reviewerName": "Laila Nabil",
+                    "reviewerEmail": "laila.nabil@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Great value for money!",
+                    "date": "2026-06-18T08:25:56.560Z",
+                    "reviewerName": "Mahmoud Ibrahim",
+                    "reviewerEmail": "mahmoud.ibrahim@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Lasts all day and I get compliments everywhere.",
+                    "date": "2026-07-20T08:25:56.560Z",
+                    "reviewerName": "Hana Tarek",
+                    "reviewerEmail": "hana.tarek@x.dummyjson.com"
+                }
+            ],
+            "image": "p7.png"
+        },
+        {
+            "id": 8,
+            "title": "Giorgio Armani Acqua di Giò",
+            "description": "Acqua di Giò by Armani is a fresh aquatic fragrance with citrus, jasmine, and rosemary over a soft patchouli base. Clean and effortless.",
+            "category": "fragrances",
+            "price": 84.99,
+            "discountPercentage": 15.8,
+            "rating": 4.57,
+            "stock": 55,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "men"
+            ],
+            "brand": "Giorgio Armani",
+            "weight": 3,
+            "dimensions": {
+                "width": 22.24,
+                "height": 25.13,
+                "depth": 28.95
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 4,
+                    "comment": "A bit strong at first, then it settles beautifully.",
+                    "date": "2026-04-14T08:25:56.560Z",
+                    "reviewerName": "Laila Nabil",
+                    "reviewerEmail": "laila.nabil@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "comment": "Lasts all day and I get compliments everywhere.",
+                    "date": "2026-08-02T08:25:56.560Z",
+                    "reviewerName": "Mahmoud Ibrahim",
+                    "reviewerEmail": "mahmoud.ibrahim@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "comment": "Lasts all day and I get compliments everywhere.",
+                    "date": "2026-06-28T08:25:56.560Z",
+                    "reviewerName": "Omar Khaled",
+                    "reviewerEmail": "omar.khaled@x.dummyjson.com"
+                }
+            ],
+            "image": "p8.png"
+        },
+        {
+            "id": 9,
+            "title": "Paco Rabanne 1 Million",
+            "description": "1 Million by Paco Rabanne is a sweet and spicy scent with blood mandarin, cinnamon, and leather amber. Bold, luxurious, and made to stand out.",
+            "category": "fragrances",
+            "price": 74.99,
+            "discountPercentage": 3.43,
+            "rating": 4.36,
+            "stock": 73,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "men"
+            ],
+            "brand": "Paco Rabanne",
+            "weight": 3,
+            "dimensions": {
+                "width": 25.76,
+                "height": 7.08,
+                "depth": 11.12
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 5,
+                    "comment": "Lasts all day and I get compliments everywhere.",
+                    "date": "2026-06-17T08:25:56.560Z",
+                    "reviewerName": "Laila Nabil",
+                    "reviewerEmail": "laila.nabil@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "comment": "Smells amazing, exactly as described.",
+                    "date": "2026-03-31T08:25:56.560Z",
+                    "reviewerName": "Sara Mostafa",
+                    "reviewerEmail": "sara.mostafa@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Perfect gift, my family loved it.",
+                    "date": "2026-05-02T08:25:56.560Z",
+                    "reviewerName": "Mariam Samir",
+                    "reviewerEmail": "mariam.samir@x.dummyjson.com"
+                }
+            ],
+            "image": "p9.png"
+        },
+        {
+            "id": 10,
+            "title": "Versace Eros",
+            "description": "Eros by Versace is a fresh and sweet fragrance featuring mint, green apple, vanilla, and tonka bean. Energetic and made for the night.",
+            "category": "fragrances",
+            "price": 68.99,
+            "discountPercentage": 17.19,
+            "rating": 3.89,
+            "stock": 37,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "men"
+            ],
+            "brand": "Versace",
+            "weight": 1,
+            "dimensions": {
+                "width": 21.38,
+                "height": 28.72,
+                "depth": 8.58
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 3,
+                    "comment": "Great value for money!",
+                    "date": "2026-09-11T08:25:56.560Z",
+                    "reviewerName": "Laila Nabil",
+                    "reviewerEmail": "laila.nabil@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Great value for money!",
+                    "date": "2026-06-22T08:25:56.560Z",
+                    "reviewerName": "Mahmoud Ibrahim",
+                    "reviewerEmail": "mahmoud.ibrahim@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "comment": "Not what I expected, but it is growing on me.",
+                    "date": "2026-04-11T08:25:56.560Z",
+                    "reviewerName": "Omar Khaled",
+                    "reviewerEmail": "omar.khaled@x.dummyjson.com"
+                }
+            ],
+            "image": "p10.png"
+        },
+        {
+            "id": 11,
+            "title": "Yves Saint Laurent Libre",
+            "description": "Libre by YSL blends lavender and orange blossom over a warm vanilla base. A bold, free-spirited floral with a modern edge.",
+            "category": "fragrances",
+            "price": 119.99,
+            "discountPercentage": 10.12,
+            "rating": 4.2,
+            "stock": 64,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "women"
+            ],
+            "brand": "Yves Saint Laurent",
+            "weight": 4,
+            "dimensions": {
+                "width": 29.03,
+                "height": 8.84,
+                "depth": 26.53
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 4,
+                    "comment": "Lasts all day and I get compliments everywhere.",
+                    "date": "2026-07-10T08:25:56.560Z",
+                    "reviewerName": "Mahmoud Ibrahim",
+                    "reviewerEmail": "mahmoud.ibrahim@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Perfect gift, my family loved it.",
+                    "date": "2026-04-29T08:25:56.560Z",
+                    "reviewerName": "Sara Mostafa",
+                    "reviewerEmail": "sara.mostafa@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "comment": "Perfect gift, my family loved it.",
+                    "date": "2026-08-31T08:25:56.560Z",
+                    "reviewerName": "Sara Mostafa",
+                    "reviewerEmail": "sara.mostafa@x.dummyjson.com"
+                }
+            ],
+            "image": "p11.png"
+        },
+        {
+            "id": 12,
+            "title": "Lancôme La Vie Est Belle",
+            "description": "La Vie Est Belle by Lancôme is a sweet gourmand floral with iris, patchouli, and praline. Joyful, elegant, and long lasting.",
+            "category": "fragrances",
+            "price": 109.99,
+            "discountPercentage": 13.89,
+            "rating": 4.06,
+            "stock": 51,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "women"
+            ],
+            "brand": "Lancôme",
+            "weight": 3,
+            "dimensions": {
+                "width": 13.95,
+                "height": 29.57,
+                "depth": 24
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 4,
+                    "comment": "Excellent longevity and sillage.",
+                    "date": "2026-04-14T08:25:56.560Z",
+                    "reviewerName": "Sara Mostafa",
+                    "reviewerEmail": "sara.mostafa@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Nice scent, but the bottle arrived slightly scratched.",
+                    "date": "2026-04-15T08:25:56.560Z",
+                    "reviewerName": "Hana Tarek",
+                    "reviewerEmail": "hana.tarek@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Great value for money!",
+                    "date": "2026-09-19T08:25:56.560Z",
+                    "reviewerName": "Karim Fathy",
+                    "reviewerEmail": "karim.fathy@x.dummyjson.com"
+                }
+            ],
+            "image": "p12.png"
+        },
+        {
+            "id": 13,
+            "title": "Viktor&Rolf Flowerbomb",
+            "description": "Flowerbomb by Viktor&Rolf is an explosion of jasmine, orchid, and patchouli with a sparkling bergamot opening. Rich and unforgettable.",
+            "category": "fragrances",
+            "price": 124.99,
+            "discountPercentage": 6.02,
+            "rating": 4.62,
+            "stock": 10,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "women"
+            ],
+            "brand": "Viktor&Rolf",
+            "weight": 5,
+            "dimensions": {
+                "width": 7.75,
+                "height": 17.17,
+                "depth": 7.54
+            },
+            "availabilityStatus": "Low Stock",
+            "reviews": [
+                {
+                    "rating": 5,
+                    "comment": "Perfect gift, my family loved it.",
+                    "date": "2026-05-09T08:25:56.560Z",
+                    "reviewerName": "Nour Ali",
+                    "reviewerEmail": "nour.ali@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Excellent longevity and sillage.",
+                    "date": "2026-06-18T08:25:56.560Z",
+                    "reviewerName": "Ahmed Hassan",
+                    "reviewerEmail": "ahmed.hassan@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Lasts all day and I get compliments everywhere.",
+                    "date": "2026-07-28T08:25:56.560Z",
+                    "reviewerName": "Omar Khaled",
+                    "reviewerEmail": "omar.khaled@x.dummyjson.com"
+                }
+            ],
+            "image": "p13.png"
+        },
+        {
+            "id": 14,
+            "title": "Tom Ford Oud Wood",
+            "description": "Oud Wood by Tom Ford is a smoky, woody fragrance with oud, sandalwood, and cardamom. Luxurious and mysterious, ideal for special evenings.",
+            "category": "fragrances",
+            "price": 249.99,
+            "discountPercentage": 10.53,
+            "rating": 3.95,
+            "stock": 5,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "unisex"
+            ],
+            "brand": "Tom Ford",
+            "weight": 2,
+            "dimensions": {
+                "width": 18.6,
+                "height": 18.32,
+                "depth": 11.75
+            },
+            "availabilityStatus": "Low Stock",
+            "reviews": [
+                {
+                    "rating": 3,
+                    "comment": "Nice scent, but the bottle arrived slightly scratched.",
+                    "date": "2026-08-05T08:25:56.560Z",
+                    "reviewerName": "Mahmoud Ibrahim",
+                    "reviewerEmail": "mahmoud.ibrahim@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Perfect gift, my family loved it.",
+                    "date": "2026-03-22T08:25:56.560Z",
+                    "reviewerName": "Youssef Adel",
+                    "reviewerEmail": "youssef.adel@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "comment": "Lasts all day and I get compliments everywhere.",
+                    "date": "2026-03-31T08:25:56.560Z",
+                    "reviewerName": "Laila Nabil",
+                    "reviewerEmail": "laila.nabil@x.dummyjson.com"
+                }
+            ],
+            "image": "p14.png"
+        },
+        {
+            "id": 15,
+            "title": "Creed Aventus",
+            "description": "Aventus by Creed is a fruity and smoky fragrance with pineapple, birch, and musk. A modern classic known for its power and longevity.",
+            "category": "fragrances",
+            "price": 299.99,
+            "discountPercentage": 2.54,
+            "rating": 4.77,
+            "stock": 9,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "men"
+            ],
+            "brand": "Creed",
+            "weight": 5,
+            "dimensions": {
+                "width": 18.07,
+                "height": 25.56,
+                "depth": 29.74
+            },
+            "availabilityStatus": "Low Stock",
+            "reviews": [
+                {
+                    "rating": 4,
+                    "comment": "Great value for money!",
+                    "date": "2026-09-26T08:25:56.560Z",
+                    "reviewerName": "Hana Tarek",
+                    "reviewerEmail": "hana.tarek@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Nice scent, but the bottle arrived slightly scratched.",
+                    "date": "2026-07-20T08:25:56.560Z",
+                    "reviewerName": "Mariam Samir",
+                    "reviewerEmail": "mariam.samir@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Not what I expected, but it is growing on me.",
+                    "date": "2026-05-10T08:25:56.560Z",
+                    "reviewerName": "Omar Khaled",
+                    "reviewerEmail": "omar.khaled@x.dummyjson.com"
+                }
+            ],
+            "image": "p15.png"
+        },
+        {
+            "id": 16,
+            "title": "Jean Paul Gaultier Le Male",
+            "description": "Le Male by Jean Paul Gaultier combines lavender, mint, and creamy vanilla. A playful and iconic scent that never goes out of style.",
+            "category": "fragrances",
+            "price": 79.99,
+            "discountPercentage": 14.16,
+            "rating": 4.86,
+            "stock": 90,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "men"
+            ],
+            "brand": "Jean Paul Gaultier",
+            "weight": 3,
+            "dimensions": {
+                "width": 11.95,
+                "height": 12.18,
+                "depth": 12.4
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 3,
+                    "comment": "Excellent longevity and sillage.",
+                    "date": "2026-08-16T08:25:56.560Z",
+                    "reviewerName": "Karim Fathy",
+                    "reviewerEmail": "karim.fathy@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Smells amazing, exactly as described.",
+                    "date": "2026-06-25T08:25:56.560Z",
+                    "reviewerName": "Nour Ali",
+                    "reviewerEmail": "nour.ali@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "comment": "Lasts all day and I get compliments everywhere.",
+                    "date": "2026-08-27T08:25:56.560Z",
+                    "reviewerName": "Nour Ali",
+                    "reviewerEmail": "nour.ali@x.dummyjson.com"
+                }
+            ],
+            "image": "p16.png"
+        },
+        {
+            "id": 17,
+            "title": "Hugo Boss Bottled",
+            "description": "Boss Bottled by Hugo Boss is a warm and woody fragrance with apple, cinnamon, and sandalwood. Smart, clean, and perfect for daily use.",
+            "category": "fragrances",
+            "price": 59.99,
+            "discountPercentage": 5.59,
+            "rating": 4.66,
+            "stock": 45,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "men"
+            ],
+            "brand": "Hugo Boss",
+            "weight": 1,
+            "dimensions": {
+                "width": 29.85,
+                "height": 21.41,
+                "depth": 14.56
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 3,
+                    "comment": "Perfect gift, my family loved it.",
+                    "date": "2026-06-20T08:25:56.560Z",
+                    "reviewerName": "Laila Nabil",
+                    "reviewerEmail": "laila.nabil@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Fast delivery and well packed.",
+                    "date": "2026-03-30T08:25:56.560Z",
+                    "reviewerName": "Sara Mostafa",
+                    "reviewerEmail": "sara.mostafa@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Excellent longevity and sillage.",
+                    "date": "2026-05-21T08:25:56.560Z",
+                    "reviewerName": "Hana Tarek",
+                    "reviewerEmail": "hana.tarek@x.dummyjson.com"
+                }
+            ],
+            "image": "p17.png"
+        },
+        {
+            "id": 18,
+            "title": "Burberry Her",
+            "description": "Burberry Her is a fruity and floral fragrance with red berries, jasmine, and soft musk. Fun, feminine, and full of personality.",
+            "category": "fragrances",
+            "price": 92.99,
+            "discountPercentage": 10.11,
+            "rating": 4.89,
+            "stock": 81,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "women"
+            ],
+            "brand": "Burberry",
+            "weight": 1,
+            "dimensions": {
+                "width": 7.27,
+                "height": 29.26,
+                "depth": 21.3
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 5,
+                    "comment": "Smells amazing, exactly as described.",
+                    "date": "2026-06-24T08:25:56.560Z",
+                    "reviewerName": "Mahmoud Ibrahim",
+                    "reviewerEmail": "mahmoud.ibrahim@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "comment": "Lasts all day and I get compliments everywhere.",
+                    "date": "2026-08-30T08:25:56.560Z",
+                    "reviewerName": "Ahmed Hassan",
+                    "reviewerEmail": "ahmed.hassan@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Fast delivery and well packed.",
+                    "date": "2026-07-06T08:25:56.560Z",
+                    "reviewerName": "Karim Fathy",
+                    "reviewerEmail": "karim.fathy@x.dummyjson.com"
+                }
+            ],
+            "image": "p18.png"
+        },
+        {
+            "id": 19,
+            "title": "Carolina Herrera Good Girl",
+            "description": "Good Girl by Carolina Herrera is a seductive blend of almond, tuberose, and tonka bean. A bold contrast of light and dark.",
+            "category": "fragrances",
+            "price": 112.99,
+            "discountPercentage": 6.5,
+            "rating": 4.37,
+            "stock": 52,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "women"
+            ],
+            "brand": "Carolina Herrera",
+            "weight": 2,
+            "dimensions": {
+                "width": 12.22,
+                "height": 12.39,
+                "depth": 27.72
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 3,
+                    "comment": "Excellent longevity and sillage.",
+                    "date": "2026-04-24T08:25:56.560Z",
+                    "reviewerName": "Omar Khaled",
+                    "reviewerEmail": "omar.khaled@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Nice scent, but the bottle arrived slightly scratched.",
+                    "date": "2026-09-29T08:25:56.560Z",
+                    "reviewerName": "Mahmoud Ibrahim",
+                    "reviewerEmail": "mahmoud.ibrahim@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Nice scent, but the bottle arrived slightly scratched.",
+                    "date": "2026-07-01T08:25:56.560Z",
+                    "reviewerName": "Youssef Adel",
+                    "reviewerEmail": "youssef.adel@x.dummyjson.com"
+                }
+            ],
+            "image": "p19.png"
+        },
+        {
+            "id": 20,
+            "title": "Prada Luna Rossa Carbon",
+            "description": "Luna Rossa Carbon by Prada is a fresh metallic fragrance with bergamot, lavender, and ambroxan. Sporty, sharp, and modern.",
+            "category": "fragrances",
+            "price": 97.99,
+            "discountPercentage": 7.63,
+            "rating": 3.9,
+            "stock": 9,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "men"
+            ],
+            "brand": "Prada",
+            "weight": 1,
+            "dimensions": {
+                "width": 19.19,
+                "height": 15.64,
+                "depth": 21.84
+            },
+            "availabilityStatus": "Low Stock",
+            "reviews": [
+                {
+                    "rating": 5,
+                    "comment": "Lasts all day and I get compliments everywhere.",
+                    "date": "2026-05-24T08:25:56.560Z",
+                    "reviewerName": "Laila Nabil",
+                    "reviewerEmail": "laila.nabil@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Excellent longevity and sillage.",
+                    "date": "2026-05-18T08:25:56.560Z",
+                    "reviewerName": "Mahmoud Ibrahim",
+                    "reviewerEmail": "mahmoud.ibrahim@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "A bit strong at first, then it settles beautifully.",
+                    "date": "2026-09-28T08:25:56.560Z",
+                    "reviewerName": "Karim Fathy",
+                    "reviewerEmail": "karim.fathy@x.dummyjson.com"
+                }
+            ],
+            "image": "p20.png"
+        },
+        {
+            "id": 21,
+            "title": "Baccarat Rouge 540",
+            "description": "Baccarat Rouge 540 is a luminous and airy fragrance with jasmine, saffron, amberwood, and cedar. A niche favorite with a distinctive signature.",
+            "category": "fragrances",
+            "price": 319.99,
+            "discountPercentage": 18.15,
+            "rating": 4.05,
+            "stock": 55,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "unisex"
+            ],
+            "brand": "Maison Francis Kurkdjian",
+            "weight": 4,
+            "dimensions": {
+                "width": 17.41,
+                "height": 27.31,
+                "depth": 23.15
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 3,
+                    "comment": "Perfect gift, my family loved it.",
+                    "date": "2026-07-29T08:25:56.560Z",
+                    "reviewerName": "Mahmoud Ibrahim",
+                    "reviewerEmail": "mahmoud.ibrahim@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "comment": "A bit strong at first, then it settles beautifully.",
+                    "date": "2026-04-12T08:25:56.560Z",
+                    "reviewerName": "Omar Khaled",
+                    "reviewerEmail": "omar.khaled@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "comment": "A bit strong at first, then it settles beautifully.",
+                    "date": "2026-05-28T08:25:56.560Z",
+                    "reviewerName": "Youssef Adel",
+                    "reviewerEmail": "youssef.adel@x.dummyjson.com"
+                }
+            ],
+            "image": "p21.png"
+        },
+        {
+            "id": 22,
+            "title": "Lattafa Khamrah",
+            "description": "Khamrah by Lattafa is a warm, sweet oriental fragrance with cinnamon, dates, praline, and vanilla. Great value with strong projection.",
+            "category": "fragrances",
+            "price": 39.99,
+            "discountPercentage": 7.96,
+            "rating": 3.96,
+            "stock": 22,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "unisex"
+            ],
+            "brand": "Lattafa",
+            "weight": 3,
+            "dimensions": {
+                "width": 29.31,
+                "height": 6.09,
+                "depth": 22.77
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 3,
+                    "comment": "A bit strong at first, then it settles beautifully.",
+                    "date": "2026-09-01T08:25:56.560Z",
+                    "reviewerName": "Omar Khaled",
+                    "reviewerEmail": "omar.khaled@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "comment": "Lasts all day and I get compliments everywhere.",
+                    "date": "2026-08-21T08:25:56.560Z",
+                    "reviewerName": "Karim Fathy",
+                    "reviewerEmail": "karim.fathy@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "comment": "Excellent longevity and sillage.",
+                    "date": "2026-05-02T08:25:56.560Z",
+                    "reviewerName": "Sara Mostafa",
+                    "reviewerEmail": "sara.mostafa@x.dummyjson.com"
+                }
+            ],
+            "image": "p22.png"
+        },
+        {
+            "id": 23,
+            "title": "Lattafa Asad",
+            "description": "Asad by Lattafa is a bold and spicy fragrance with black pepper, pineapple, vanilla, and amber. Long lasting and very affordable.",
+            "category": "fragrances",
+            "price": 34.99,
+            "discountPercentage": 15.58,
+            "rating": 3.99,
+            "stock": 51,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "men"
+            ],
+            "brand": "Lattafa",
+            "weight": 4,
+            "dimensions": {
+                "width": 11.53,
+                "height": 21.57,
+                "depth": 27.35
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 4,
+                    "comment": "Perfect gift, my family loved it.",
+                    "date": "2026-09-25T08:25:56.560Z",
+                    "reviewerName": "Hana Tarek",
+                    "reviewerEmail": "hana.tarek@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Great value for money!",
+                    "date": "2026-06-22T08:25:56.560Z",
+                    "reviewerName": "Omar Khaled",
+                    "reviewerEmail": "omar.khaled@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Perfect gift, my family loved it.",
+                    "date": "2026-04-30T08:25:56.560Z",
+                    "reviewerName": "Laila Nabil",
+                    "reviewerEmail": "laila.nabil@x.dummyjson.com"
+                }
+            ],
+            "image": "p23.png"
+        },
+        {
+            "id": 24,
+            "title": "Armaf Club de Nuit Intense Man",
+            "description": "Club de Nuit Intense Man by Armaf is a fruity and smoky fragrance with lemon, pineapple, birch, and musk. A popular pick with excellent longevity.",
+            "category": "fragrances",
+            "price": 44.99,
+            "discountPercentage": 5.9,
+            "rating": 4.81,
+            "stock": 90,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "men"
+            ],
+            "brand": "Armaf",
+            "weight": 1,
+            "dimensions": {
+                "width": 20.9,
+                "height": 27.57,
+                "depth": 18.01
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 4,
+                    "comment": "A bit strong at first, then it settles beautifully.",
+                    "date": "2026-04-05T08:25:56.560Z",
+                    "reviewerName": "Ahmed Hassan",
+                    "reviewerEmail": "ahmed.hassan@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Excellent longevity and sillage.",
+                    "date": "2026-07-18T08:25:56.560Z",
+                    "reviewerName": "Hana Tarek",
+                    "reviewerEmail": "hana.tarek@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "comment": "Fast delivery and well packed.",
+                    "date": "2026-06-09T08:25:56.560Z",
+                    "reviewerName": "Mariam Samir",
+                    "reviewerEmail": "mariam.samir@x.dummyjson.com"
+                }
+            ],
+            "image": "p24.png"
+        },
+        {
+            "id": 25,
+            "title": "Rasasi Hawas for Him",
+            "description": "Hawas for Him by Rasasi is a fresh aquatic fragrance with apple, bergamot, cinnamon, and ambergris. Cool, sporty, and very refreshing.",
+            "category": "fragrances",
+            "price": 49.99,
+            "discountPercentage": 7.85,
+            "rating": 3.91,
+            "stock": 39,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "men"
+            ],
+            "brand": "Rasasi",
+            "weight": 4,
+            "dimensions": {
+                "width": 9.7,
+                "height": 7.92,
+                "depth": 27.32
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 3,
+                    "comment": "Fast delivery and well packed.",
+                    "date": "2026-08-07T08:25:56.560Z",
+                    "reviewerName": "Youssef Adel",
+                    "reviewerEmail": "youssef.adel@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Fast delivery and well packed.",
+                    "date": "2026-06-09T08:25:56.560Z",
+                    "reviewerName": "Sara Mostafa",
+                    "reviewerEmail": "sara.mostafa@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "comment": "A bit strong at first, then it settles beautifully.",
+                    "date": "2026-04-02T08:25:56.560Z",
+                    "reviewerName": "Hana Tarek",
+                    "reviewerEmail": "hana.tarek@x.dummyjson.com"
+                }
+            ],
+            "image": "p25.png"
+        },
+        {
+            "id": 26,
+            "title": "Al Haramain Amber Oud Gold Edition",
+            "description": "Amber Oud Gold Edition by Al Haramain is a sweet and warm fragrance blending amber and oud with a juicy fruity opening. Rich and luxurious.",
+            "category": "fragrances",
+            "price": 54.99,
+            "discountPercentage": 9.22,
+            "rating": 4.56,
+            "stock": 28,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "unisex"
+            ],
+            "brand": "Al Haramain",
+            "weight": 4,
+            "dimensions": {
+                "width": 26.44,
+                "height": 7.24,
+                "depth": 12.26
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 3,
+                    "comment": "Excellent longevity and sillage.",
+                    "date": "2026-09-28T08:25:56.560Z",
+                    "reviewerName": "Nour Ali",
+                    "reviewerEmail": "nour.ali@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Great value for money!",
+                    "date": "2026-07-16T08:25:56.560Z",
+                    "reviewerName": "Karim Fathy",
+                    "reviewerEmail": "karim.fathy@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Perfect gift, my family loved it.",
+                    "date": "2026-04-28T08:25:56.560Z",
+                    "reviewerName": "Karim Fathy",
+                    "reviewerEmail": "karim.fathy@x.dummyjson.com"
+                }
+            ],
+            "image": "p26.png"
+        },
+        {
+            "id": 27,
+            "title": "Afnan 9PM",
+            "description": "9PM by Afnan is a sweet and spicy fragrance with apple, cinnamon, vanilla, and tonka bean. Made for night outs and cold weather.",
+            "category": "fragrances",
+            "price": 42.99,
+            "discountPercentage": 11.5,
+            "rating": 4.53,
+            "stock": 7,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "men"
+            ],
+            "brand": "Afnan",
+            "weight": 2,
+            "dimensions": {
+                "width": 24.44,
+                "height": 7.68,
+                "depth": 27.95
+            },
+            "availabilityStatus": "Low Stock",
+            "reviews": [
+                {
+                    "rating": 4,
+                    "comment": "Great value for money!",
+                    "date": "2026-07-24T08:25:56.560Z",
+                    "reviewerName": "Ahmed Hassan",
+                    "reviewerEmail": "ahmed.hassan@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Lasts all day and I get compliments everywhere.",
+                    "date": "2026-07-02T08:25:56.560Z",
+                    "reviewerName": "Hana Tarek",
+                    "reviewerEmail": "hana.tarek@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "comment": "Perfect gift, my family loved it.",
+                    "date": "2026-09-16T08:25:56.560Z",
+                    "reviewerName": "Karim Fathy",
+                    "reviewerEmail": "karim.fathy@x.dummyjson.com"
+                }
+            ],
+            "image": "p27.png"
+        },
+        {
+            "id": 28,
+            "title": "Byredo Gypsy Water",
+            "description": "Gypsy Water by Byredo is a soft woody fragrance with bergamot, pine, incense, and vanilla. Calm, airy, and quietly elegant.",
+            "category": "fragrances",
+            "price": 229.99,
+            "discountPercentage": 19.75,
+            "rating": 4.09,
+            "stock": 28,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "unisex"
+            ],
+            "brand": "Byredo",
+            "weight": 3,
+            "dimensions": {
+                "width": 17.15,
+                "height": 18.24,
+                "depth": 29.58
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 4,
+                    "comment": "Great value for money!",
+                    "date": "2026-09-23T08:25:56.560Z",
+                    "reviewerName": "Nour Ali",
+                    "reviewerEmail": "nour.ali@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "comment": "Not what I expected, but it is growing on me.",
+                    "date": "2026-08-03T08:25:56.560Z",
+                    "reviewerName": "Ahmed Hassan",
+                    "reviewerEmail": "ahmed.hassan@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Nice scent, but the bottle arrived slightly scratched.",
+                    "date": "2026-06-09T08:25:56.560Z",
+                    "reviewerName": "Karim Fathy",
+                    "reviewerEmail": "karim.fathy@x.dummyjson.com"
+                }
+            ],
+            "image": "p28.png"
+        },
+        {
+            "id": 29,
+            "title": "Jo Malone English Pear & Freesia",
+            "description": "English Pear & Freesia by Jo Malone is a light and juicy fragrance with ripe pear, freesia, and a soft patchouli base. Fresh and graceful.",
+            "category": "fragrances",
+            "price": 149.99,
+            "discountPercentage": 14.56,
+            "rating": 3.84,
+            "stock": 59,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "unisex"
+            ],
+            "brand": "Jo Malone",
+            "weight": 4,
+            "dimensions": {
+                "width": 11.94,
+                "height": 14.24,
+                "depth": 14.29
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 3,
+                    "comment": "Great value for money!",
+                    "date": "2026-09-14T08:25:56.560Z",
+                    "reviewerName": "Mahmoud Ibrahim",
+                    "reviewerEmail": "mahmoud.ibrahim@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "comment": "Fast delivery and well packed.",
+                    "date": "2026-09-04T08:25:56.560Z",
+                    "reviewerName": "Youssef Adel",
+                    "reviewerEmail": "youssef.adel@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Excellent longevity and sillage.",
+                    "date": "2026-07-22T08:25:56.560Z",
+                    "reviewerName": "Sara Mostafa",
+                    "reviewerEmail": "sara.mostafa@x.dummyjson.com"
+                }
+            ],
+            "image": "p29.png"
+        },
+        {
+            "id": 30,
+            "title": "Givenchy L'Interdit",
+            "description": "L'Interdit by Givenchy is a floral fragrance with white flowers, tuberose, and vetiver. Daring, elegant, and unmistakably feminine.",
+            "category": "fragrances",
+            "price": 99.99,
+            "discountPercentage": 14.77,
+            "rating": 4.55,
+            "stock": 100,
+            "tags": [
+                "fragrances",
+                "perfumes",
+                "women"
+            ],
+            "brand": "Givenchy",
+            "weight": 5,
+            "dimensions": {
+                "width": 26.75,
+                "height": 24.52,
+                "depth": 18.32
+            },
+            "availabilityStatus": "In Stock",
+            "reviews": [
+                {
+                    "rating": 4,
+                    "comment": "Perfect gift, my family loved it.",
+                    "date": "2026-09-22T08:25:56.560Z",
+                    "reviewerName": "Laila Nabil",
+                    "reviewerEmail": "laila.nabil@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "A bit strong at first, then it settles beautifully.",
+                    "date": "2026-09-01T08:25:56.560Z",
+                    "reviewerName": "Hana Tarek",
+                    "reviewerEmail": "hana.tarek@x.dummyjson.com"
+                },
+                {
+                    "rating": 3,
+                    "comment": "Lasts all day and I get compliments everywhere.",
+                    "date": "2026-06-18T08:25:56.560Z",
+                    "reviewerName": "Hana Tarek",
+                    "reviewerEmail": "hana.tarek@x.dummyjson.com"
+                }
+            ],
+            "image": "p30.png"
+        }
+    ],
+    "total": 30,
+    "skip": 0,
+    "limit": 30
+}

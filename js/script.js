@@ -1,5 +1,3 @@
-
-
 let
     navbar = document.querySelector("nav.navbar"),
     nextBtn = document.querySelector("#Home .next"),
@@ -45,16 +43,6 @@ prevBtn.addEventListener("click", function () {
             prevPage.classList.add("show");
         }, 100);
     }, 500);
-});
-
-window.addEventListener("scroll", function () {
-    if (window.scrollY > lastScrollY) {
-        navbar.classList.add("scrolled");
-    } else {
-        navbar.classList.remove("scrolled");
-    }
-
-    lastScrollY = window.scrollY;
 });
 
 // * Swiper
@@ -116,5 +104,59 @@ const swiper = new Swiper(".swiper", {
         enabled: true,
         onlyInViewport: false,
     },
+
+});
+
+// * WOW
+wow = new WOW(
+    {
+        animateClass: 'animate__animated',
+    }
+)
+wow.init();
+
+// * gsap
+document.addEventListener("DOMContentLoaded", () => {
+
+    gsap.registerPlugin(SplitText, ScrollTrigger);
+
+    const wrapper = document.querySelector(".Horizontal");
+    const text = document.querySelector(".Horizontal__text");
+
+    if (!wrapper || !text) return;
+
+    const split = SplitText.create(text, {
+        type: "chars, words"
+    });
+
+    const scrollTween = gsap.to(text, {
+        x: () => -(text.scrollWidth - wrapper.offsetWidth),
+        ease: "none",
+
+        scrollTrigger: {
+            trigger: wrapper,
+            pin: true,
+            scrub: true,
+            end: () => `+=${text.scrollWidth}`
+        }
+    });
+
+    split.chars.forEach((char) => {
+
+        gsap.from(char, {
+            yPercent: "random(-200, 200)",
+            rotation: "random(-20, 20)",
+            ease: "back.out(1.2)",
+
+            scrollTrigger: {
+                trigger: char,
+                containerAnimation: scrollTween,
+                start: "left 100%",
+                end: "left 30%",
+                scrub: 1
+            }
+        });
+
+    });
 
 });

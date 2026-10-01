@@ -38,6 +38,10 @@
 
     <link rel="stylesheet" href="./css/plugins/swiper-bundle.min.css">
 
+    <!-- ^ Animate & Wow ^ -->
+    <link rel="stylesheet" href="./css/plugins/animate.min.css">
+    <link rel="stylesheet" href="./css/plugins/animate.css">
+
     <link rel="stylesheet" href="./css/style.css">
 
     <title>AURESCENT | Luxury Fragrance House</title>
@@ -86,7 +90,7 @@
         <div id="tsparticles"></div>
         <div class="container">
             <div class="row active show">
-                <div class="content col-md-6 col-lg-6 p-0">
+                <div class="content col-md-6 col-lg-6 p-0 wow animate__backInLeft">
                     <div class="hero position-relative">
                         <p>Émeraude Impériale</p>
                         <h1 class="display-2">ROYAL</h1>
@@ -105,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="image col-md-6">
+                <div class="image col-md-6 wow animate__backInRight">
                     <img src="./images/hero1.png" alt="hero">
                 </div>
             </div>
@@ -166,12 +170,21 @@
         </a>
     </header>
 
+    <!--*------ Featured Section ------*-->
+    <section class="Horizontal">
+        <div class="container">
+            <h3 class="Horizontal__text heading-xl">
+                CRAFTED TO BE REMEMBERED — <span>LEAVE A TRACE, NOT JUST A SCENT</span>.
+            </h3>
+        </div>
+    </section>
+
     <!--*------ Brand Story Section ------*-->
     <section id="Story">
         <div class="container">
             <div class="row">
                 <div
-                    class="part-1 m-auto mb-4 m-lg-0 col-10 col-md-6 col-lg-6 d-flex flex-column justify-content-center gap-3">
+                    class="part-1 m-auto mb-4 m-lg-0 col-10 col-md-6 col-lg-6 d-flex flex-column justify-content-center gap-3  wow animate__fadeIn">
                     <span>EST. MCMXCII</span>
                     <h2 class="display-4 mx-2">The Legacy of Scent</h2>
                     <p class="text-secondary fw-lighter h6">In the quiet chambers of our Parisian atelier, we
@@ -183,7 +196,7 @@
                         luxury.</p>
                     <a href="#" class="btn">OUR PHILOSOPHY</a>
                 </div>
-                <div class="part-2 m-auto col-10 col-md-6 col-lg-6 p-4 position-relative">
+                <div class="part-2 m-auto col-10 col-md-6 col-lg-6 p-4 position-relative wow animate__fadeIn">
                     <img src="./images/story.png" class="img-fluid" alt="story">
                 </div>
             </div>
@@ -191,11 +204,11 @@
     </section>
 
     <section id="Products">
-        <div class="container">
+        <div class="container wow animate__fadeIn">
 
             <div class="title d-flex justify-content-between align-items-center">
                 <h2 class="d-flex flex-column m-0 display-6">Products <span class="display-5">Collections</span></h2>
-                <button class="fw-lighter h6 btn-view"><span>View all</span></button>
+                <a class="fw-lighter h6 btn-view" target="_self" href="./pages/products.html"><span>Shop <i class="fa-solid fa-bag-shopping"></i></span></a>
             </div>
 
             <!-- Slider main container -->
@@ -219,11 +232,21 @@
 
     <script src="./js/plugins/swiper-bundle.min.js"></script>
 
+    <script src="./js/plugins/wow.min.js"></script>
+
+    <script src="./js/plugins/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+
     <script src="./js/script.js"></script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/engine@4/tsparticles.engine.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/slim@4/tsparticles.slim.bundle.min.js"></script>
     <script src="./js/plugins/tsparticles.js"></script>
+
 
 
 </body>

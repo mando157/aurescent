@@ -1,0 +1,157 @@
+@use "../abstracts/" as *;
+
+#AllProducts {
+    background-color: transparent;
+
+    .content {
+        .row {
+            .box {
+                @include responsive(350) {
+                    margin: auto;
+                }
+
+                @include responsive(850) {
+                    margin: initial;
+                }
+
+                .product {
+                    position: relative;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    box-shadow: rgba(255, 255, 255, 0.2) 0px 10px 50px;
+                    transition-duration: .5s;
+
+                    img {
+                        width: 100%;
+                    }
+
+                    @include responsive(350) {
+                        margin: auto;
+                        max-width: 320px;
+                    }
+
+                    @include responsive(850) {
+                        margin: initial;
+                        max-width: initial;
+                    }
+
+                    .layout {
+                        @include position($b : 0, $l :20px);
+                        background-color: rgba(255, 255, 255, 0.5);
+                        backdrop-filter: blur(3px);
+                        -webkit-backdrop-filter: blur(3px);
+                        box-shadow: rgba(255, 255, 255, 0.2) 0px 10px 50px;
+                        border-radius: 10px;
+                        padding: 20px;
+                        margin-bottom: 20px;
+                        margin-right: 20px;
+                        width: calc(100% - 40px);
+                        height: 224px;
+                        color: black;
+                        transition:
+                            width 1s ease 1s,
+                            height 1s ease;
+
+                        overflow: hidden;
+
+                        * {
+                            font-weight: 600;
+                        }
+
+                        #Price {
+                            span:nth-of-type(1) {
+                                color: black;
+                            }
+
+                            color:$primary-light ;
+                        }
+
+                        h5 {
+                            color: $primary-color;
+                        }
+
+                        p {
+                            font-weight: 400;
+                        }
+                    }
+
+                    .read-more {
+                        @include position($t : 20px, $r : 0);
+                        transition-duration: 1s;
+
+                        opacity: 0;
+                        transform: translateX(100%);
+
+                        width: 45px;
+                        height: 45px;
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        border: 1px solid rgba($primary-light, 0.5);
+                        border-radius: 50%;
+
+                        background-color: transparent;
+                        color: $primary-light;
+
+                        cursor: pointer;
+                        overflow: hidden;
+
+                        transition: 0.4s ease;
+
+                        i {
+                            position: relative;
+                            z-index: 2;
+                            font-size: 17px;
+
+                            transition: 0.4s ease;
+                        }
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            inset: 0;
+
+                            background-color: $primary-light;
+
+                            border-radius: 50%;
+
+                            transform: scale(0);
+                            transition: 0.4s ease;
+                        }
+
+                        &:hover {
+                            color: #000;
+                            border-color: #000;
+                            transform: translateY(-3px);
+
+                            &::before {
+                                transform: scale(1);
+                            }
+
+                            i {
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        transform: translateY(-5px);
+                        box-shadow: rgba(229, 192, 107, 0.4) 0px 10px 50px;
+
+                        .layout {
+                            width: calc(100% - 40px);
+                            height: 224px;
+                        }
+
+                        .read-more {
+                            opacity: 1;
+                            transform: translateX(-15px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
