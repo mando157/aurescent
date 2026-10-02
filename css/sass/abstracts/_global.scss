@@ -1,4 +1,5 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
 body {
     font-family: "Poppins", sans-serif;
@@ -48,6 +49,7 @@ section {
         span {
             color: $primary-light;
         }
+
         display: flex;
         width: max-content;
         white-space: nowrap;
@@ -60,4 +62,100 @@ section {
         font-weight: 600;
         line-height: 1.1;
     }
+}
+
+.loader {
+    width: 75px;
+    aspect-ratio: 1;
+    display: grid;
+
+    &::before,
+    &::after {
+        content: "";
+        grid-area: 1/1;
+        width: 35px;
+        aspect-ratio: 1;
+        box-shadow: 0 0 0 3px $primary-light inset;
+        filter: drop-shadow(40px 40px 0 $primary-light);
+        animation: l8 2s infinite alternate;
+    }
+
+    &::after {
+        margin: 0 0 0 auto;
+        filter: drop-shadow(-40px 40px 0 $primary-light);
+        animation-delay: -1s;
+    }
+}
+
+@keyframes l8 {
+
+    0%,
+    10% {
+        border-radius: 0
+    }
+
+    30%,
+    40% {
+        border-radius: 50% 0
+    }
+
+    60%,
+    70% {
+        border-radius: 50%
+    }
+
+    90%,
+    100% {
+        border-radius: 0 50%
+    }
+}
+
+.loading {
+    @include position($p : fixed, $t :0, $l :0, $z : 1100);
+    @include distance(100%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(135deg,
+            #000000 0%,
+            #0B0905 25%,
+            #3A2E14 50%,
+            rgb(229, 192, 107) 72%,
+            #8A702F 88%,
+            #000000 100%);
+
+    .content {
+        position: relative;
+        text-align: center;
+
+        h2 {
+            font-weight: 600;
+            color: $primary-light;
+
+            .tube {
+                position: relative;
+                width: 100%;
+                height: 40px;
+            }
+
+            .line {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin: 0;
+                line-height: 1;
+                font-size: clamp(18px, 2.5vw, 35px);
+                letter-spacing: -0.1vw;
+                white-space: nowrap;
+                text-align: center;
+            }
+
+            .line div {
+                backface-visibility: hidden;
+            }
+        }
+    }
+
 }

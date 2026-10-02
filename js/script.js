@@ -49,13 +49,15 @@ prevBtn.addEventListener("click", function () {
 const swiper = new Swiper(".swiper", {
 
     loop: true,
-    speed: 500,
+    speed: 600,
 
     autoplay: {
         delay: 3000,
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
     },
+
+    centeredSlides: true,
 
     slidesPerView: 1,
     spaceBetween: 20,
@@ -85,9 +87,9 @@ const swiper = new Swiper(".swiper", {
     effect: "coverflow",
 
     coverflowEffect: {
-        rotate: 35,
+        rotate: 25,
         stretch: 0,
-        depth: 100,
+        depth: 120,
         modifier: 1,
         slideShadows: false,
     },
@@ -95,14 +97,16 @@ const swiper = new Swiper(".swiper", {
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
-        type: 'bullets',
+        type: "bullets",
+        dynamicBullets: true,
+        dynamicMainBullets: 5,
     },
 
     grabCursor: true,
 
     keyboard: {
         enabled: true,
-        onlyInViewport: false,
+        onlyInViewport: true,
     },
 
 });
@@ -159,4 +163,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+});
+
+
+// * Loading Page
+
+gsap.registerPlugin(SplitText);
+
+// Grab all lines
+const lines = document.querySelectorAll(".line");
+
+// Split characters for all lines
+const splitLines = Array.from(lines).map(line =>
+    new SplitText(line, { type: "chars", charsClass: "char" })
+);
+
+// 3D setup
+const width = window.innerWidth;
+const height = window.innerHeight;
+const depth = -width / 60;
+const transformOrigin = `50% 50% ${depth}`;
+
+gsap.set(lines, { perspective: 700, transformStyle: "preserve-3d" });
+
+// Timeline animation
+const animTime = 0.9;
+const tl = gsap.timeline({ repeat: -1 });
+
+// Animate each line in a loop
+splitLines.forEach((split, index) => {
+    tl.fromTo(
+        split.chars,
+        { rotationX: -90 },
+        { rotationX: 90, stagger: 0.08, duration: animTime, ease: "none", transformOrigin },
+        index * 0.45 // stagger between lines
+    );
+});
+
+$("body").css("overflow", "hidden");
+
+window.addEventListener("DOMContentLoaded" , function(){
+    $("body").css("overflow", "auto" , 1000);
+    $(".loading").fadeOut(1000);
 });
