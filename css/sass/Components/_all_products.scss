@@ -3,6 +3,22 @@
 #AllProducts {
     background-color: transparent;
 
+    .title {
+        .path-btn {
+            margin-right: 10px;
+        }
+
+        h2 {
+            @include flex();
+            gap: 5px;
+            font-weight: 600;
+
+            >span.current {
+                color: $primary-color;
+            }
+        }
+    }
+
     .content {
         .row {
             .box {
@@ -37,7 +53,8 @@
 
                     .layout {
                         @include position($b : 0, $l :20px);
-                        background-color: rgba(255, 255, 255, 0.5);
+                        @include flex($direction : column, $al : start , $js : start);
+                        background-color: rgba(0, 0, 0, 0.65);
                         backdrop-filter: blur(3px);
                         -webkit-backdrop-filter: blur(3px);
                         box-shadow: rgba(255, 255, 255, 0.2) 0px 10px 50px;
@@ -46,36 +63,53 @@
                         margin-bottom: 20px;
                         margin-right: 20px;
                         width: calc(100% - 40px);
-                        height: 224px;
-                        color: black;
-                        transition:
-                            width 1s ease 1s,
-                            height 1s ease;
+                        height: 0px;
+                        transition: all 0.5s;
 
-                        overflow: hidden;
+                        opacity: 0;
+                        overflow-y: auto;
+                        scrollbar-width: none;
+
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
 
                         * {
                             font-weight: 600;
                         }
 
-                        #Price {
-                            span:nth-of-type(1) {
-                                color: black;
-                            }
-
-                            color:$primary-light ;
-                        }
-
                         h5 {
                             color: $primary-color;
+                            text-shadow:
+                                0 2px 5px rgba(0, 0, 0, 0.6),
+                                0 0 10px rgba(229, 192, 107, 0.45),
+                                0 0 25px rgba(229, 192, 107, 0.2);
                         }
 
-                        p {
+                        #Price {
+                            .price {
+                                color: $primary-light;
+                            }
+                        }
+
+                        .dimensions {
+                            span.dim-content {
+                                color: $primary-dark;
+                                text-shadow: 0 0 10px rgba(229, 192, 107, 0.45);
+                            }
+                        }
+
+                        .description p {
                             font-weight: 400;
+                            border-radius: 10px;
+                            padding: 10px;
+                            background-color: rgba(255, 255, 255, 0.5);
+                            backdrop-filter: blur(3px);
+                            box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 50px;
                         }
                     }
 
-                    .read-more {
+                    .shop-now {
                         @include position($t : 20px, $r : 0);
                         transition-duration: 1s;
 
@@ -89,7 +123,7 @@
                         justify-content: center;
                         align-items: center;
 
-                        border: 1px solid rgba($primary-light, 0.5);
+                        border: 2px solid rgba($primary-light, 0.5);
                         border-radius: 50%;
 
                         background-color: transparent;
@@ -103,7 +137,8 @@
                         i {
                             position: relative;
                             z-index: 2;
-                            font-size: 17px;
+                            font-size: 20px;
+                            font-weight: 900;
 
                             transition: 0.4s ease;
                         }
@@ -141,11 +176,11 @@
                         box-shadow: rgba(229, 192, 107, 0.4) 0px 10px 50px;
 
                         .layout {
-                            width: calc(100% - 40px);
-                            height: 224px;
+                            opacity: 1;
+                            height: calc(100% - 100px);
                         }
 
-                        .read-more {
+                        .shop-now {
                             opacity: 1;
                             transform: translateX(-15px);
                         }
