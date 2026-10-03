@@ -1,0 +1,133 @@
+@use "../abstracts/" as *;
+
+#Cart {
+    background-color: transparent;
+
+    .title {
+        .path-btn {
+            margin-right: 10px;
+        }
+
+        h2 {
+            @include flex();
+            gap: 5px;
+            font-weight: 600;
+            font-size: 30px;
+
+            >span.current {
+                color: $primary-color;
+            }
+        }
+    }
+
+    .cart-content {
+        .product {
+            @include flex($js : space-evenly);
+            box-shadow: inset 0px 0px 20px rgba(255, 255, 255, .8), 0px 0px 10px rgba(255, 255, 255, .8);
+            border-radius: 5px;
+            padding: 20px;
+
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+
+            @include responsive(350) {
+                @include flex($js : space-evenly, $direction : column);
+                width: 280px;
+            }
+
+            @include responsive(650) {
+                @include flex($js : space-evenly, $direction : row);
+                width: initial;
+            }
+
+            .text {
+                @include flex($js : space-between);
+                gap: 30px;
+
+                @include responsive(350) {
+                    @include flex($js : space-evenly, $direction : column, $al : start);
+                }
+
+                @include responsive(1050) {
+                    @include flex($js : space-evenly, $direction : row, $al : center);
+                }
+
+                .description {
+                    box-shadow: inset 0px 0px 20px rgba(255, 255, 255, .8);
+                    padding: 20px;
+                    width: 250px;
+                    border-radius: 5px;
+                }
+
+                .price,
+                .dim-content {
+                    color: $primary-color;
+                }
+            }
+
+            .image {
+                text-align: center;
+
+                img {
+                    width: 150px;
+                    border-radius: 5px;
+                }
+
+                .product-name {
+                    color: $primary-light;
+                }
+            }
+        }
+    }
+}
+
+@include responsive(350) {
+    #Cart {
+        .title {
+            h2 {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@include responsive(850) {
+    #Cart {
+        .title {
+            h2 {
+                font-size: 25px;
+            }
+        }
+
+        .cart-content {
+            .product {
+                .image {
+                    img {
+                        width: 250px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive(1050) {
+    #Cart {
+        .title {
+            h2 {
+                font-size: 30px;
+            }
+        }
+
+        .cart-content {
+            .product {
+                .image {
+                    img {
+                        width: 150px;
+                    }
+                }
+            }
+        }
+    }
+}

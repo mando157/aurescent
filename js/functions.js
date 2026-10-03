@@ -1,7 +1,14 @@
 // * Get Data
-let data = null;
-async function getData(urlPath) {
-    let allData = await fetch(urlPath);
+let data = null,
+    counter = 0;
+
+async function getData(urlPath, id = null) {
+    // * URL
+    let parameter = new URLSearchParams({
+        id: id,
+    });
+
+    let allData = await fetch(`${urlPath}?${parameter.toString()}`);
 
     respondData = await allData.json();
 
@@ -36,7 +43,7 @@ function productCardComponent(product) {
 // * Products Page
 function pageOfProductsCardsComponent(product) {
     return `
-        <div class="box col-11 col-md-6 col-lg-4 wow animate__fadeIn">
+        <div class="box col-11 col-md-6 col-lg-4 wow animate__fadeIn" data-id="${product.id}">
             <div class="product text-light">
                 <img src="../images/products/${product.image}" class="img-fluid" alt="product">
                 <div class="layout">
@@ -59,13 +66,88 @@ function pageOfProductsCardsComponent(product) {
                         <p class="m-0">${product.description}</p>
                     </div>
                 </div>
-                <button class="shop-now">
+                <button class="shop-now" onclick="addProductToCart(this)">
                     <i class="fa-brands fa-opencart fa-wag"></i>
                 </button>
             </div>
         </div>
         `;
 }
+// * LocalStorage in Product Page 
+function updateLocalStorage() {
+    localStorage.setItem(
+        "cartProducts",
+        JSON.stringify(cartProducts)
+    );
+}
+
+function addProductToCart(that) {
+    getProductById(that.closest(".box").getAttribute("data-id"));
+}
+
+let cartProducts = [];
+// * Get Product By ID
+function getProductById(productId) {
+    let product = data.find(product => product.id == productId);
+    console.log(product);
+
+    cartProducts.push(product);
+    console.log(cartProducts);
+
+    updateLocalStorage();
+
+    counter = ++counter;
+
+    $(".cart-counter").text(counter);
+
+}
+
+function showCartProducts() {
+    cartProducts.forEach(function (product) {
+        $(".cart-content").append(cartProductComponent(product));
+    });
+}
+
+
+function cartProductComponent(product) {
+    return `
+        <div class="product mx-auto" data-id="${product.id}">
+            <div class="image d-flex flex-column align-items-center gap-3">
+                <img src="../images/products/${product.image}" class="img-fluid" alt="product">
+                <h5 class="product-name m-0 mx-3">${product.title}</h5>
+            </div>
+            <div class="text">
+                <div class="description">
+                    <p class="m-0">
+                        ${product.description}
+                    </p>
+                </div>
+
+                <div class="dimensions my-2">
+                    <ul class="m-0 p-0 d-flex flex-column gap-1">
+                        <li><span>width :</span> <span class="dim-content ml-2 fw-bold">${product.dimensions.width}</span></li>
+                        <li><span>height :</span> <span class="dim-content ml-2 fw-bold">${product.dimensions.height}</span></li>
+                        <li><span>depth :</span> <span class="dim-content ml-2 fw-bold">${product.dimensions.depth}</span></li>
+                    </ul>
+                </div>
+
+                <div id="Price" class="fw-bold">
+                    <p class="m-0 fs-6">
+                        <span class="fs-5">Price :</span>
+                        <span class="text-secondary ${(Number(product.discountPercentage) == "") ? 'd-none' : ''}"><del>${Number(product.price)}</del><sup>$</sup></span>
+                        <span class="price">${(Number(product.price) * (1 - Number(product.discountPercentage) / 100)).toFixed(2)}<sup>$</sup></span>
+                    </p>
+                </div>
+
+                <div class="buttons">
+                    <button class="btn btn-danger" >Remove</button>
+                </div>
+            </div>
+        </div>
+
+    `
+}
+
 
 // * Loading Function
 function loading() {
