@@ -6,5 +6,5 @@ wow = new WOW(
 )
 wow.init();
 
-getData("../../data/products.json");
+getData("../data/products.json");
 loading();
