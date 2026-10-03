@@ -5,7 +5,7 @@ let
 
     lastScrollY = window.scrollY;
 
-getData("../data/products.json");
+getData("./data/products.json");
 
 // * Next & Prev Buttons
 nextBtn.addEventListener("click", function () {

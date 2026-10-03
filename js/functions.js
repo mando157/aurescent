@@ -1,7 +1,7 @@
 // * Get Data
 let data = null;
 async function getData(urlPath) {
-    let allData = await fetch(urlPath ?? '../data/data.json');
+    let allData = await fetch(urlPath);
 
     respondData = await allData.json();
 
@@ -10,6 +10,7 @@ async function getData(urlPath) {
     showProductData(data);
 
 }
+
 //  * Show Products Data
 function showProductData(data) {
 
