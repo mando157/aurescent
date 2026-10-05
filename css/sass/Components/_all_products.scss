@@ -67,7 +67,7 @@
 
                     .layout {
                         @include position($b : 0, $l :20px);
-                        @include flex($direction : column, $al : start, $js : start);
+                        @include flex($direction : column, $al : start, $js : space-evenly);
                         background-color: rgba(0, 0, 0, 0.65);
                         backdrop-filter: blur(3px);
                         -webkit-backdrop-filter: blur(3px);
@@ -113,13 +113,15 @@
                             }
                         }
 
-                        .description p {
-                            font-weight: 400;
-                            border-radius: 10px;
-                            padding: 10px;
-                            background-color: rgba(255, 255, 255, 0.5);
-                            backdrop-filter: blur(3px);
-                            box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 50px;
+                        .description {
+                            p {
+                                font-weight: 400;
+                                border-radius: 10px;
+                                padding: 10px;
+                                background-color: rgba(255, 255, 255, 0.5);
+                                backdrop-filter: blur(3px);
+                                box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 50px;
+                            }
                         }
                     }
 

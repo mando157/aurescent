@@ -80,6 +80,25 @@
             }
         }
     }
+
+    .no-product {
+        width: 100%;
+        @include flex();
+        gap: 15px;
+        padding: 20px;
+        margin: 20px 0px;
+        box-shadow: inset 0px 0px 20px rgba(255, 255, 255, .8), 0px 0px 10px rgba(255, 255, 255, .8);
+
+        p {
+            margin: 0;
+            font-size: 25px;
+        }
+
+        i {
+            color: $primary-color;
+            font-size: 25px;
+        }
+    }
 }
 
 @include responsive(350) {

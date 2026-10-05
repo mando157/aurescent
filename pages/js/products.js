@@ -8,4 +8,3 @@ wow.init();
 
 getData("../data/products.json");
 loading();
-

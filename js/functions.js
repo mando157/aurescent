@@ -2,17 +2,14 @@
 let data = null,
     cartProducts = [];
 
-async function getData(urlPath, id = null) {
-    // * URL
-    let parameter = new URLSearchParams({
-        id: id,
-    });
+async function getData(urlPath) {
 
-    let allData = await fetch(`${urlPath}?${parameter.toString()}`);
+    let allData = await fetch(`${urlPath}`);
 
     respondData = await allData.json();
 
     data = respondData.products;
+
 
     showProductData(data);
 
@@ -22,6 +19,8 @@ async function getData(urlPath, id = null) {
 function showProductData(data) {
 
     data.forEach(product => {
+        product.numberOfItems = 0;
+
         $("#Shop .swiper-wrapper").append(productCardComponent(product));
 
         // * Show Products Page Data
@@ -57,16 +56,16 @@ function pageOfProductsCardsComponent(product) {
                     </div>
                     <div class="dimensions my-2">
                         <ul class="m-0 p-0">
-                            <li><span>width :</span> <span class="dim-content ml-2">${product.dimensions.width}</span></li>
-                            <li><span>height :</span> <span class="dim-content ml-2">${product.dimensions.height}</span></li>
-                            <li><span>depth :</span> <span class="dim-content ml-2">${product.dimensions.depth}</span></li>
+                            <li><span>Amount :</span> <span class="dim-content ml-2">${((product.dimensions.height) * (product.dimensions.width)).toFixed(0)}ml</span></li>
+                            <li><span>Depth :</span> <span class="dim-content ml-2">${product.dimensions.depth}</span></li>
+                            <li><span>Quantity :</span> <span class="numberOfItems dim-content ml-2">0</span></li>
                         </ul>
                     </div>
                     <div class="description">
                         <p class="m-0">${product.description}</p>
                     </div>
                 </div>
-                <button class="shop-now" onclick="addProductToCart(this)">
+                <button class="shop-now" onclick="addProductToCart(this);isAdd();">
                     <i class="fa-brands fa-opencart fa-wag"></i>
                 </button>
             </div>
@@ -83,9 +82,19 @@ if (localStorage.getItem("cartProducts") === null) {
         localStorage.getItem("cartProducts")
     );
 
-    $(".cart-counter").text(cartProducts.length);
-}
+    let totalQuantity = cartProducts.reduce(function (total, product) {
+        return total + product.numberOfItems;
+    }, 0);
 
+    $(".cart-counter").text(totalQuantity);
+
+    // * Check Cart
+    if (cartProducts.length > 0) {
+        $(".no-product").addClass("d-none");
+    } else {
+        $(".no-product").removeClass("d-none");
+    }
+}
 
 function updateLocalStorage() {
     localStorage.setItem(
@@ -95,17 +104,34 @@ function updateLocalStorage() {
 }
 
 function addProductToCart(that) {
-    getProductById(that.closest(".box").getAttribute("data-id"));
+    getProductById(that.closest(".box").getAttribute("data-id"), that);
 }
 
 // * Get Product By ID
-function getProductById(productId) {
-    let product = data.find(product => product.id == productId);
+function getProductById(productId, that) {
 
-    cartProducts.push(product);
+    let product = data.find(product => product.id == productId),
+        isProduct = cartProducts.find(product => product.id == productId);
+
+    if (!isProduct) {
+        cartProducts.push(product);
+        product.numberOfItems = 1;
+
+        that.closest(".box").querySelector(".numberOfItems").textContent = product.numberOfItems;
+
+    } else {
+        isProduct.numberOfItems++;
+
+        that.closest(".box").querySelector(".numberOfItems").textContent = isProduct.numberOfItems;
+    }
 
     updateLocalStorage();
-    $(".cart-counter").text(cartProducts.length);
+
+    let totalQuantity = cartProducts.reduce(function (total, product) {
+        return total + product.numberOfItems;
+    }, 0);
+
+    $(".cart-counter").text(totalQuantity);
 
 }
 
@@ -122,7 +148,7 @@ function cartProductComponent(product) {
         <div class="product mx-auto" data-id="${product.id}">
             <div class="image d-flex flex-column align-items-center gap-3">
                 <img src="../images/products/${product.image}" class="img-fluid" alt="product">
-                <h5 class="product-name m-0 mx-3">${product.title}</h5>
+                <h5 class="product-name m-0">${product.title.slice(0, 15)}</h5>
             </div>
             <div class="text">
                 <div class="description">
@@ -133,39 +159,61 @@ function cartProductComponent(product) {
 
                 <div class="dimensions my-2">
                     <ul class="m-0 p-0 d-flex flex-column gap-1">
-                        <li><span>width :</span> <span class="dim-content ml-2 fw-bold">${product.dimensions.width}</span></li>
-                        <li><span>height :</span> <span class="dim-content ml-2 fw-bold">${product.dimensions.height}</span></li>
-                        <li><span>depth :</span> <span class="dim-content ml-2 fw-bold">${product.dimensions.depth}</span></li>
+                        <li><span>Quantity :</span> <span class="numberOfItems dim-content ml-2 fw-bold">${product.numberOfItems}</span></li>
+                        <li><span>Amount :</span> <span class="dim-content ml-2 fw-bold">${((product.dimensions.height) * (product.dimensions.width)).toFixed(0)}ml</span></li>
+                        <li><span>Depth :</span> <span class="dim-content ml-2 fw-bold">${product.dimensions.depth}</span></li>
                     </ul>
                 </div>
 
                 <div id="Price" class="fw-bold">
                     <p class="m-0 fs-6">
                         <span class="fs-5">Price :</span>
-                        <span class="text-secondary ${(Number(product.discountPercentage) == "") ? 'd-none' : ''}"><del>${Number(product.price)}</del><sup>$</sup></span>
+
+                        <span class="text-secondary ${(Number(product.discountPercentage) == "") ? 'd-none' : ''}"><del>${Number(product.price)}
+                        </del><sup>$</sup></span>
                         <span class="price">${(Number(product.price) * (1 - Number(product.discountPercentage) / 100)).toFixed(2)}<sup>$</sup></span>
+                    </p>
+                    <p>
+                        <span class="fs-5">Total Price :</span>
+                        <span class="price">${((Number(product.price) * (1 - Number(product.discountPercentage) / 100)) * product.numberOfItems).toFixed(2)}<sup>$</sup></span>
                     </p>
                 </div>
 
-                <button class="btn btn-danger" onclick="removeProduct(this)">Remove</button>
+                <button class="btn btn-danger" onclick="removeProductFromCart(this)">Remove</button>
             </div>
         </div>
 
     `
 }
 
-function removeProduct(that) {
+function removeProductFromCart(that) {
     let product = that.closest(".product"),
-        productId = product.getAttribute("data-id");
+        productId = product.getAttribute("data-id"),
+        removedProduct = cartProducts.find(product => product.id == productId),
+        removedProductIndex = cartProducts.findIndex(product => product.id == productId);
 
-    product.remove();
+    if (removedProduct.numberOfItems == 1) {
+        product.remove();
+        cartProducts.splice(removedProductIndex, 1);
 
-    let removedProduct = cartProducts.find(product => product.id == productId);
-    cartProducts.splice(removedProduct, 1);
+        if (cartProducts.length == 0) {
+            $(".no-product").removeClass("d-none");
+        }
+    }
+    else if (removedProduct.numberOfItems > 1) {
+        --removedProduct.numberOfItems;
+
+        product.querySelector(".numberOfItems").textContent = removedProduct.numberOfItems;
+    }
 
     updateLocalStorage();
-}
 
+    let totalQuantity = cartProducts.reduce(function (total, product) {
+        return total + product.numberOfItems;
+    }, 0);
+
+    $(".cart-counter").text(totalQuantity);
+}
 
 // * Loading Function
 function loading() {
@@ -176,5 +224,46 @@ function loading() {
             $(".loading").fadeOut(1000);
             $("body").css("overflow", "", 1000);
         }, 1000);
+    });
+}
+
+function isAdd() {
+    Swal.mixin({
+        toast: true,
+        position: "bottom-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+
+        customClass: {
+            popup: "aurescent-toast",
+            title: "aurescent-toast-title",
+            timerProgressBar: "aurescent-progress"
+        },
+
+        didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+        },
+
+        showClass: {
+            popup: `
+                animate__animated
+                animate__fadeInRight
+                animate__faster
+            `
+        },
+
+        hideClass: {
+            popup: `
+                animate__animated
+                animate__fadeOutRight
+                animate__faster
+            `
+        }
+
+    }).fire({
+        icon: "success",
+        title: "Added to your Cart"
     });
 }

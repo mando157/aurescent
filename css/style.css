@@ -186,6 +186,35 @@ section {
   backface-visibility: hidden;
 }
 
+.aurescent-toast {
+  background: rgba(15, 15, 16, 0.97) !important;
+  border: 1px solid rgba(229, 192, 107, 0.5) !important;
+  border-radius: 2px !important;
+  padding: 16px 20px !important;
+  min-width: 300px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45), 0 0 20px rgba(200, 155, 60, 0.06) !important;
+  backdrop-filter: blur(10px);
+}
+.aurescent-toast .aurescent-toast-title {
+  color: #F6F2EB !important;
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  letter-spacing: 1.2px;
+}
+.aurescent-toast .swal2-icon {
+  width: 28px !important;
+  height: 28px !important;
+  margin: 0 12px 0 0 !important;
+  border: 1px solid rgb(229, 192, 107) !important;
+  color: rgb(229, 192, 107) !important;
+  font-size: 14px !important;
+}
+.aurescent-toast .aurescent-progress {
+  height: 2px !important;
+  background: rgb(229, 192, 107) !important;
+}
+
 .brand-name {
   color: #C89B3C;
 }
@@ -822,7 +851,7 @@ header > .icon {
   left: 20px;
   z-index: initial;
   display: flex;
-  justify-content: start;
+  justify-content: space-evenly;
   align-items: start;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.65);
@@ -1053,6 +1082,25 @@ header > .icon {
 }
 #Cart .cart-content .product .image .product-name {
   color: rgb(229, 192, 107);
+}
+#Cart .no-product {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+  padding: 20px;
+  margin: 20px 0px;
+  box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.8), 0px 0px 10px rgba(255, 255, 255, 0.8);
+}
+#Cart .no-product p {
+  margin: 0;
+  font-size: 25px;
+}
+#Cart .no-product i {
+  color: #C89B3C;
+  font-size: 25px;
 }
 
 /* 350 */
