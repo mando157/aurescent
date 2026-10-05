@@ -11,10 +11,24 @@
         h2 {
             @include flex();
             gap: 5px;
+            font-size: 35px;
             font-weight: 600;
 
             >span.current {
                 color: $primary-color;
+            }
+
+
+            @include responsive(350) {
+                font-size: 18px;
+            }
+
+            @include responsive(650) {
+                font-size: 25px;
+            }
+
+            @include responsive(1050) {
+                font-size: 35px;
             }
         }
     }

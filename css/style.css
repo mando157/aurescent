@@ -740,10 +740,35 @@ header > .icon {
   align-items: center;
   flex-direction: row;
   gap: 5px;
+  font-size: 35px;
   font-weight: 600;
 }
 #AllProducts .title h2 > span.current {
   color: #C89B3C;
+}
+#AllProducts .title h2 {
+  /* 350 */
+}
+@media (max-width: 1300px) {
+  #AllProducts .title h2 {
+    font-size: 18px;
+  }
+}
+#AllProducts .title h2 {
+  /* 650 */
+}
+@media (min-width: 577px) and (max-width: 1300px) {
+  #AllProducts .title h2 {
+    font-size: 25px;
+  }
+}
+#AllProducts .title h2 {
+  /* 1050 */
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+  #AllProducts .title h2 {
+    font-size: 35px;
+  }
 }
 #AllProducts .content .row .box {
   /* 350 */

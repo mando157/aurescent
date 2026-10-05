@@ -1,6 +1,6 @@
 // * Get Data
 let data = null,
-    counter = 0;
+    cartProducts = [];
 
 async function getData(urlPath, id = null) {
     // * URL
@@ -74,6 +74,19 @@ function pageOfProductsCardsComponent(product) {
         `;
 }
 // * LocalStorage in Product Page 
+
+// * LocalStorage
+if (localStorage.getItem("cartProducts") === null) {
+    updateLocalStorage();
+} else {
+    cartProducts = JSON.parse(
+        localStorage.getItem("cartProducts")
+    );
+
+    $(".cart-counter").text(cartProducts.length);
+}
+
+
 function updateLocalStorage() {
     localStorage.setItem(
         "cartProducts",
@@ -85,22 +98,17 @@ function addProductToCart(that) {
     getProductById(that.closest(".box").getAttribute("data-id"));
 }
 
-let cartProducts = [];
 // * Get Product By ID
 function getProductById(productId) {
     let product = data.find(product => product.id == productId);
-    console.log(product);
 
     cartProducts.push(product);
-    console.log(cartProducts);
 
     updateLocalStorage();
-
-    counter = ++counter;
-
-    $(".cart-counter").text(counter);
+    $(".cart-counter").text(cartProducts.length);
 
 }
+
 
 function showCartProducts() {
     cartProducts.forEach(function (product) {
@@ -139,13 +147,23 @@ function cartProductComponent(product) {
                     </p>
                 </div>
 
-                <div class="buttons">
-                    <button class="btn btn-danger" >Remove</button>
-                </div>
+                <button class="btn btn-danger" onclick="removeProduct(this)">Remove</button>
             </div>
         </div>
 
     `
+}
+
+function removeProduct(that) {
+    let product = that.closest(".product"),
+        productId = product.getAttribute("data-id");
+
+    product.remove();
+
+    let removedProduct = cartProducts.find(product => product.id == productId);
+    cartProducts.splice(removedProduct, 1);
+
+    updateLocalStorage();
 }
 
 
