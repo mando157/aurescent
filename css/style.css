@@ -89,7 +89,7 @@ section {
 
 .Horizontal {
   overflow: hidden;
-  height: 100vh;
+  height: 100svh;
   display: flex;
   align-items: center;
 }
@@ -572,6 +572,7 @@ header > .icon {
   color: #C89B3C;
   font-size: 22px;
   animation: show 1s alternate ease-in-out infinite;
+  cursor: pointer;
 }
 
 #Story .part-1 span,

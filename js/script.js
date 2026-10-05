@@ -1,9 +1,11 @@
 let
+    // * Navbar
     navbar = document.querySelector("nav.navbar"),
     nextBtn = document.querySelector("#Home .next"),
     prevBtn = document.querySelector("#Home .prev"),
+    $navLinks = $("nav.navbar .nav-link");
 
-    lastScrollY = window.scrollY;
+lastScrollY = window.scrollY;
 
 getData("./data/products.json");
 
@@ -121,4 +123,48 @@ wow = new WOW(
 )
 wow.init();
 
+// * Loading Page Function
 loading();
+
+// * NavLinks
+
+$navLinks.each(function (index, link) {
+    $(link).on("click", function (e) {
+        e.preventDefault();
+        let sectionId = $(`.section${link.getAttribute("href")}`)[0],
+            topOfSection = ($(sectionId).offset().top) - ($(navbar).outerHeight()),
+            bottomOfSection = topOfSection + ($(sectionId).outerHeight()),
+            currentLink = $("nav.navbar .nav-link.active");
+
+        currentLink.removeClass("active");
+        $(link).addClass("active");
+
+        window.scrollTo({
+            top: topOfSection,
+            behavior: "smooth"
+        });
+
+    });
+});
+
+window.addEventListener("scroll", function () {
+    $(".section").each(function (index, section) {
+        let topOfSection = (($(section).offset().top) - ($(navbar).outerHeight())) - 50,
+            bottomOfSection = (topOfSection + ($(section).outerHeight())),
+            currentLink = $("nav.navbar .nav-link.active");
+
+        if (window.scrollY > topOfSection && window.scrollY < bottomOfSection) {
+            currentLink.removeClass("active");
+            $(`nav.navbar .nav-link[href="#${section.id}"]`).addClass("active");
+
+        }
+    });
+});
+
+$("#Home > p.icon").click(function () {
+    window.scrollTo({
+        top: (($("#Story").offset().top) - ($(navbar).outerHeight())),
+        behavior: "smooth"
+    });
+})
+
