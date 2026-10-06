@@ -1,6 +1,7 @@
 // * Get Data
 let data = null,
-    cartProducts = [];
+    cartProducts = [],
+    feedBackContainer = [];
 
 async function getData(urlPath) {
 
@@ -65,7 +66,7 @@ function pageOfProductsCardsComponent(product) {
                         <p class="m-0">${product.description}</p>
                     </div>
                 </div>
-                <button class="shop-now" onclick="addProductToCart(this);isAdd();">
+                <button class="shop-now" onclick="addProductToCart(this);alert('Added to your Cart' , 'success');">
                     <i class="fa-brands fa-opencart fa-wag"></i>
                 </button>
             </div>
@@ -94,12 +95,21 @@ if (localStorage.getItem("cartProducts") === null) {
     } else {
         $(".no-product").removeClass("d-none");
     }
+
+    feedBackContainer = JSON.parse(
+        localStorage.getItem("feedBackContainer")
+    );
 }
 
 function updateLocalStorage() {
     localStorage.setItem(
         "cartProducts",
         JSON.stringify(cartProducts)
+    );
+
+    localStorage.setItem(
+        "feedBackContainer",
+        JSON.stringify(feedBackContainer)
     );
 }
 
@@ -179,7 +189,7 @@ function cartProductComponent(product) {
                     </p>
                 </div>
 
-                <button class="btn btn-danger" onclick="removeProductFromCart(this)">Remove</button>
+                <button class="btn btn-danger" onclick="removeProductFromCart(this) ; alert('Removed Successfully' ,'success')">Remove</button>
             </div>
         </div>
 
@@ -227,7 +237,7 @@ function loading() {
     });
 }
 
-function isAdd() {
+function alert(message, alertIcon = "success") {
     Swal.mixin({
         toast: true,
         position: "bottom-end",
@@ -263,7 +273,77 @@ function isAdd() {
         }
 
     }).fire({
-        icon: "success",
-        title: "Added to your Cart"
+        icon: alertIcon,
+        title: message,
     });
+}
+
+// * Message Section
+function addFeedBack() {
+    let $form = $("#Message form"),
+        $input = $("#Message input.form-control"),
+        $textarea = $("#Message textarea.form-control"),
+        nameRegex = /^[A-Za-z ]+$/,
+        nameValue = $input.val().trim(),
+        messageValue = $textarea.val().trim();
+
+    $form.off("submit").on("submit", function (e) {
+        e.preventDefault();
+
+        if (nameValue == ""
+            || messageValue == ""
+            || nameValue.length < 3
+            || messageValue.length < 10
+            || !nameRegex.test(nameValue)) {
+
+            if (nameValue.length < 3 || messageValue.length < 10) {
+                alert("Enter a Correct Name and Feedback", "warning");
+            } else {
+                alert("You must enter your Name and Feedback", "warning");
+            }
+
+            return;
+        } else {
+
+            let feedBack = {
+                name: nameValue,
+                message: messageValue,
+            };
+
+            feedBackContainer.push(feedBack);
+
+            updateLocalStorage();
+
+            showFeedBack();
+
+        }
+    });
+}
+function showFeedBack() {
+    $(".feedback-container").empty();
+
+    feedBackContainer.forEach(function (feedBack) {
+        $(".feedback-container").append(feedBackComponent(feedBack));
+    });
+}
+
+function feedBackComponent(feedBack) {
+    return `
+        <div class="feedback mb-3">
+            <h5 class="name"><i class="fa-regular fa-circle-user"></i> ${((feedBack.name == "") ? "User" : feedBack.name).slice(0, 15)} ...</h5>
+            <p>${(feedBack.message) || "Don't have any feedback"}</p>
+        </div>
+    `
+}
+
+function reset(that){
+    let form = that.closest("form"),
+    inputs = form.querySelectorAll("input"),
+    textarea = form.querySelector("textarea");
+
+    textarea.value = "";
+    inputs.forEach(function(input){
+        input.value = "";
+    });
+
 }

@@ -133,7 +133,6 @@ $navLinks.each(function (index, link) {
         e.preventDefault();
         let sectionId = $(`.section${link.getAttribute("href")}`)[0],
             topOfSection = ($(sectionId).offset().top) - ($(navbar).outerHeight()),
-            bottomOfSection = topOfSection + ($(sectionId).outerHeight()),
             currentLink = $("nav.navbar .nav-link.active");
 
         currentLink.removeClass("active");
@@ -168,3 +167,4 @@ $("#Home > p.icon").click(function () {
     });
 })
 
+showFeedBack();

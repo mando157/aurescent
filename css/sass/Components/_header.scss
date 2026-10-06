@@ -238,11 +238,12 @@ header {
                 }
 
                 @include responsive(350) {
-                    display: none;
+                    max-width: 300px;
                 }
 
                 @include responsive(850) {
                     @include flex();
+                    max-width: initial;
                 }
             }
         }

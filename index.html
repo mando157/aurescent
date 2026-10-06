@@ -42,12 +42,15 @@
     <link rel="stylesheet" href="./css/plugins/animate.min.css">
     <link rel="stylesheet" href="./css/plugins/animate.css">
 
+    <link rel="stylesheet" href="./css/plugins/sweetalert.css">
+
     <link rel="stylesheet" href="./css/style.css">
 
     <title>AURESCENT | Luxury Fragrance House</title>
 </head>
 
 <body>
+    <div id="tsparticles"></div>
 
     <!-- ! Loading Screen ! -->
     <div class="loading">
@@ -87,8 +90,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex position-relative p-2" href="#Contact">
-                        <div class="content">Massage</div>
+                    <a class="nav-link d-flex position-relative p-2" href="#Message">
+                        <div class="content">Message</div>
                         <i class="fa-regular fa-comment"></i>
                     </a>
                 </li>
@@ -112,10 +115,9 @@
         <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
         <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
 
-        <div id="tsparticles"></div>
         <div class="container">
             <div class="row active show">
-                <div class="content col-md-6 col-lg-6 p-0 wow animate__backInLeft">
+                <div class="content col-11 col-md-6 col-lg-6 p-0 wow animate__backInLeft mx-auto">
                     <div class="hero position-relative">
                         <p>Émeraude Impériale</p>
                         <h1 class="display-2">ROYAL</h1>
@@ -134,13 +136,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="image col-md-6 wow animate__backInRight">
+                <div class="image col-10 col-md-6 wow mx-auto">
                     <img src="./images/hero1.png" alt="hero">
                 </div>
             </div>
 
             <div class="row">
-                <div class="content col-md-6 col-lg-6 p-0">
+                <div class="content col-11 col-md-6 col-lg-6 p-0 mx-auto">
                     <div class="hero position-relative">
                         <p>Rubis Géométrique</p>
                         <h1 class="display-2">BOLD</h1>
@@ -159,13 +161,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="image col-md-6">
+                <div class="image col-10 col-md-6 wow mx-auto">
                     <img src="./images/hero2.png" alt="hero">
                 </div>
             </div>
 
             <div class="row">
-                <div class="content col-md-6 col-lg-6 p-0">
+                <div class="content col-11 col-md-6 col-lg-6 p-0 mx-auto">
                     <div class="hero position-relative">
                         <p>Saphir Céleste</p>
                         <h1 class="display-2">LUXURY</h1>
@@ -184,7 +186,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="image col-md-6">
+                <div class="image col-10 col-md-6 wow animate__backInRight mx-auto">
                     <img src="./images/hero3.png" alt="hero">
                 </div>
             </div>
@@ -199,7 +201,7 @@
     <div class="Horizontal text-light">
         <div class="container">
             <h3 class="Horizontal__text heading-xl">
-                CRAFTED TO BE REMEMBERED — <span>LEAVE A TRACE, NOT JUST A SCENT</span>.
+                CRAFTED TO BE REMEMBERED — <span>LEAVE A TRACE, NOT JUST A SCENT</span>
             </h3>
         </div>
     </div>
@@ -250,9 +252,146 @@
         </div>
     </section>
 
-    <!--*------ Featured Collections Section ------*-->
+    <!--*------ Massage Section ------*-->
 
+    <section id="Message" class="section">
+        <div class="container">
+            <div class="title d-flex justify-content-between align-items-center">
+                <h2 class="d-flex flex-column m-0 display-6">
+                    Give me
+                    <span class="display-5 text-light">Your FeedBack</span>
+                </h2>
+            </div>
+            <div class="content mt-5">
+                <div class="row row-gap-4">
+                    <div class="part-1 col-md-6">
+                        <form action="" method="GET">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">
+                                    <i class="fa-regular fa-user"></i>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Username">
+                            </div>
 
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">
+                                    <i class="fa-regular fa-comment-dots"></i>
+                                </span>
+                                <textarea class="form-control" placeholder="Your FeedBack"></textarea>
+                            </div>
+
+                            <button onclick="addFeedBack() ; alert('Done' , 'success') ; reset(this)"><span>Done <i
+                                        class="fa-regular fa-circle-check"></i></span></button>
+
+                            <div class="contact-dock">
+                                <!-- C -->
+                                <div class="letter facebook">
+                                    <div class="flip">
+                                        <div class="front">C</div>
+                                        <a href="#" class="back">
+                                            <i class="fa-brands fa-facebook-f"></i>
+                                        </a>
+                                    </div>
+
+                                    <span class="tooltip">Facebook</span>
+                                </div>
+
+                                <!-- O -->
+                                <div class="letter instagram">
+                                    <div class="flip">
+                                        <div class="front">O</div>
+                                        <a href="#" class="back">
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                    </div>
+
+                                    <span class="tooltip">Instagram</span>
+                                </div>
+
+                                <!-- N -->
+                                <div class="letter linkedin">
+                                    <div class="flip">
+                                        <div class="front">N</div>
+                                        <a href="#" class="back">
+                                            <i class="fa-brands fa-linkedin-in"></i>
+                                        </a>
+                                    </div>
+
+                                    <span class="tooltip">LinkedIn</span>
+                                </div>
+
+                                <!-- T -->
+                                <div class="letter youtube">
+                                    <div class="flip">
+                                        <div class="front">T</div>
+                                        <a href="#" class="back">
+                                            <i class="fa-brands fa-youtube"></i>
+                                        </a>
+                                    </div>
+
+                                    <span class="tooltip">YouTube</span>
+                                </div>
+
+                                <!-- A -->
+                                <div class="letter whatsapp">
+                                    <div class="flip">
+                                        <div class="front">A</div>
+                                        <a href="#" class="back">
+                                            <i class="fa-brands fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+
+                                    <span class="tooltip">WhatsApp</span>
+                                </div>
+
+                                <!-- C -->
+                                <div class="letter email">
+                                    <div class="flip">
+                                        <div class="front">C</div>
+                                        <a href="#" class="back">
+                                            <i class="fa-solid fa-envelope"></i>
+                                        </a>
+                                    </div>
+
+                                    <span class="tooltip">Email</span>
+                                </div>
+
+                                <!-- T -->
+                                <div class="letter twitter">
+                                    <div class="flip">
+                                        <div class="front">T</div>
+                                        <a href="#" class="back">
+                                            <i class="fa-brands fa-x-twitter"></i>
+                                        </a>
+                                    </div>
+
+                                    <span class="tooltip">X / Twitter</span>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="part-2 col-md-6">
+                        <h3 class="mx-auto text-center my-3">Our Clint FeedBack</h3>
+                        <div class="feedback-container">
+                            <!-- <div class="feedback mb-3">
+                                <h5 class="name"><i class="fa-regular fa-circle-user"></i> mohamed ...</h5>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum dolores, quibusdam
+                                    cum dignissimos hic qui adipisci ducimus eligendi dolore itaque.</p>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--*------ Footer Section ------*-->
+    <footer class="py-3 text-center">
+        <p class="m-0 mx-3 text-light">&copy; 2026 <span class="fw-bold">Mohamed Hassan</span> , Ltd. | All Rights
+            Reserved .</p>
+    </footer>
 
     <!-- ! ________________ JS ________________ ! -->
 
@@ -292,6 +431,7 @@
     <!--?------ Custom Particles Configuration ------?-->
     <script src="./js/plugins/tsparticles.js"></script>
 
+    <script src="./js/plugins/sweetalert.js"></script>
 
 
 </body>
