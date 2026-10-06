@@ -95,10 +95,16 @@ if (localStorage.getItem("cartProducts") === null) {
     } else {
         $(".no-product").removeClass("d-none");
     }
+}
 
+if (localStorage.getItem("feedBackContainer") === null) {
+    updateLocalStorage();
+} else {
     feedBackContainer = JSON.parse(
         localStorage.getItem("feedBackContainer")
     );
+
+    showFeedBack();
 }
 
 function updateLocalStorage() {
@@ -315,7 +321,6 @@ function addFeedBack() {
             updateLocalStorage();
 
             showFeedBack();
-
         }
     });
 }
@@ -336,13 +341,13 @@ function feedBackComponent(feedBack) {
     `
 }
 
-function reset(that){
+function reset(that) {
     let form = that.closest("form"),
-    inputs = form.querySelectorAll("input"),
-    textarea = form.querySelector("textarea");
+        inputs = form.querySelectorAll("input"),
+        textarea = form.querySelector("textarea");
 
     textarea.value = "";
-    inputs.forEach(function(input){
+    inputs.forEach(function (input) {
         input.value = "";
     });
 
