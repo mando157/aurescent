@@ -97,7 +97,7 @@ header {
             }
 
             .content {
-                @include flex();
+                @include flex($js : start);
                 @include position(relative);
                 transform: translateX(-100%);
                 transition-duration: 1s;
@@ -228,21 +228,22 @@ header {
                 transition-duration: 1s;
 
                 img {
-                    margin: 40px 0px 0px 0px;
                     @include position(relative);
-
+                    
                     width: 100%;
 
                     border-radius: 10px;
                     box-shadow: 0 0 50px 10px rgba(255, 215, 121, 0.3);
                 }
-
+                
                 @include responsive(350) {
+                    margin: 40px 0px 0px 0px;
                     max-width: 300px;
                 }
 
                 @include responsive(850) {
                     @include flex();
+                    margin:0px;
                     max-width: initial;
                 }
             }

@@ -407,7 +407,7 @@ header .container .row.active {
 }
 header .container .row .content {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   flex-direction: row;
   position: relative;
@@ -556,7 +556,6 @@ header .container .row .image {
   transition-duration: 1s;
 }
 header .container .row .image img {
-  margin: 40px 0px 0px 0px;
   position: relative;
   top: initial;
   right: initial;
@@ -572,6 +571,7 @@ header .container .row .image {
 }
 @media (max-width: 1300px) {
   header .container .row .image {
+    margin: 40px 0px 0px 0px;
     max-width: 300px;
   }
 }
@@ -584,6 +584,7 @@ header .container .row .image {
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    margin: 0px;
     max-width: initial;
   }
 }

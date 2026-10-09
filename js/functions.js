@@ -67,7 +67,7 @@ function pageOfProductsCardsComponent(product) {
                     </div>
                 </div>
                 <button class="shop-now" onclick="addProductToCart(this);alert('Added to your Cart' , 'success');">
-                    <i class="fa-brands fa-opencart fa-wag"></i>
+                    <i class="fa-solid fa-cart-arrow-down fa-wag"></i>
                 </button>
             </div>
         </div>
@@ -321,6 +321,8 @@ function addFeedBack() {
             updateLocalStorage();
 
             showFeedBack();
+
+            $("form button").click(reset(this));
         }
     });
 }
@@ -341,8 +343,8 @@ function feedBackComponent(feedBack) {
     `
 }
 
-function reset(that) {
-    let form = that.closest("form"),
+function reset(button) {
+    let form = button.closest("form"),
         inputs = form.querySelectorAll("input"),
         textarea = form.querySelector("textarea");
 
